@@ -14,7 +14,7 @@ const HeroSection = () => (
     </div>
 
     {/* Content */}
-    <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center animate-fade-in">
+    <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center animate-fade-in pt-20 md:pt-0">
       <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-brand-cream mb-6 tracking-wide drop-shadow-2xl animate-fade-in">
         Wijnbar Clos
       </h1>
@@ -22,75 +22,101 @@ const HeroSection = () => (
         “Een plek voor goede wijn, aandacht en tijd.”
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-        <Button variant="white-outline" onClick={() => console.log('Wijnkaart PDF')}>
-          Bekijk Wijnkaart
-        </Button>
-        <Button variant="white-outline" onClick={() => console.log('Menu PDF')}>
-          Bekijk Menukaart
-        </Button>
-      </div>
-      <div className="mt-6">
-        <Button variant="primary" className="bg-brand-gold text-brand-forest border-brand-gold hover:bg-brand-cream hover:text-brand-forest hover:border-brand-cream">
-          Direct Reserveren
-        </Button>
+      <div className="flex flex-col items-center w-full mt-24 md:mt-0">
+        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <Button variant="white-outline" onClick={() => console.log('Wijnkaart PDF')}>
+            Bekijk Wijnkaart
+          </Button>
+          <Button variant="white-outline" onClick={() => console.log('Menu PDF')}>
+            Bekijk Menukaart
+          </Button>
+        </div>
+        <div className="mt-6">
+          <Button variant="primary" className="bg-brand-gold text-brand-forest border-brand-gold hover:bg-brand-cream hover:text-brand-forest hover:border-brand-cream">
+            Direct Reserveren
+          </Button>
+        </div>
       </div>
     </div>
   </section>
 );
 
-const PhotoGrid = () => (
-  <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto bg-brand-cream">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 h-auto">
+const PhotoGrid = () => {
+  const images = [
+    '/images/gallery-1.jpg',
+    '/images/gallery-2.jpg',
+    '/images/gallery-3.jpg',
+    '/images/gallery-4.jpg',
+    '/images/gallery-5.jpg',
+  ];
 
-      {/* Col 1 */}
-      <div className="flex flex-col gap-4 md:gap-6">
-        <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-          <img
-            src="/images/gallery-1.jpg"
-            alt="Sfeerbeeld 1"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-          />
-        </div>
-        <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-          <img
-            src="/images/gallery-2.jpg"
-            alt="Sfeerbeeld 2"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-          />
-        </div>
+  return (
+    <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto bg-brand-cream">
+      {/* Mobile Carousel */}
+      <div className="md:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory -mx-4 px-4 pb-4 no-scrollbar">
+        {images.map((img, index) => (
+          <div key={index} className="flex-none w-[85vw] h-[400px] snap-center relative border border-brand-gold/20">
+            <img
+              src={img}
+              alt={`Sfeerbeeld ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
       </div>
 
-      {/* Col 2 (Tall/Center) */}
-      <div className="group overflow-hidden relative h-[400px] md:h-auto border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-        <img
-          src="/images/gallery-5.jpg"
-          alt="Sfeerbeeld 5"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-        />
-      </div>
+      {/* Desktop Grid */}
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 h-auto">
 
-      {/* Col 3 */}
-      <div className="flex flex-col gap-4 md:gap-6">
-        <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
+        {/* Col 1 */}
+        <div className="flex flex-col gap-4 md:gap-6">
+          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
+            <img
+              src="/images/gallery-1.jpg"
+              alt="Sfeerbeeld 1"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+            />
+          </div>
+          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
+            <img
+              src="/images/gallery-2.jpg"
+              alt="Sfeerbeeld 2"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+            />
+          </div>
+        </div>
+
+        {/* Col 2 (Tall/Center) */}
+        <div className="group overflow-hidden relative h-[400px] md:h-auto border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
           <img
-            src="/images/gallery-3.jpg"
-            alt="Sfeerbeeld 3"
+            src="/images/gallery-5.jpg"
+            alt="Sfeerbeeld 5"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
           />
         </div>
-        <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-          <img
-            src="/images/gallery-4.jpg"
-            alt="Sfeerbeeld 4"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-          />
-        </div>
-      </div>
 
-    </div>
-  </section>
-);
+        {/* Col 3 */}
+        <div className="flex flex-col gap-4 md:gap-6">
+          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
+            <img
+              src="/images/gallery-3.jpg"
+              alt="Sfeerbeeld 3"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+            />
+          </div>
+          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
+            <img
+              src="/images/gallery-4.jpg"
+              alt="Sfeerbeeld 4"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
 
 const AboutSection = () => (
   <section className="py-24 px-6 relative overflow-hidden bg-brand-beige">
