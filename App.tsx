@@ -29,10 +29,10 @@ const AppContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-stone-800 bg-stone-50 selection:bg-wine-900 selection:text-white">
+    <div className="min-h-screen flex flex-col font-sans text-brand-grey bg-brand-cream selection:bg-brand-gold selection:text-brand-forest">
       <ScrollToTop />
       <Navbar scrolled={scrolled} />
-      
+
       <main className="flex-grow w-full">
         <Routes>
           <Route path="/" element={<Home />} />

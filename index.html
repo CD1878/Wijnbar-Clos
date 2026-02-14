@@ -1,59 +1,84 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wijnbar Clos</title>
-    <meta name="description" content="Een plek voor goede wijn, aandacht en tijd." />
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              serif: ['"Playfair Display"', 'serif'],
-              sans: ['"Lato"', 'sans-serif'],
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wijnbar Clos</title>
+  <meta name="description" content="Een plek voor goede wijn, aandacht en tijd." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display SC"', 'serif'],
+            sans: ['"Karla"', 'sans-serif'],
+            display: ['"Playfair Display SC"', 'serif'],
+            body: ['"Karla"', 'sans-serif'],
+            brush: ['"Permanent Marker"', 'cursive'],
+          },
+          colors: {
+            stone: {
+              50: '#fafaf9',
+              100: '#f5f5f4',
+              800: '#292524',
+              900: '#1c1917',
             },
-            colors: {
-              stone: {
-                50: '#fafaf9',
-                100: '#f5f5f4',
-                800: '#292524',
-                900: '#1c1917',
+            brand: {
+              cream: '#F2EEE8',      // Warm Cream (Main BG)
+              beige: '#E7E0D6',      // Soft Beige (Sections)
+              sand: '#D8CFC2',       // Light Sand (Footer/Alt)
+              green: {
+                dark: '#1F3A2E',     // Deep Olive (Header/Primary Text)
+                forest: '#0F2A1F',   // Dark Forest (Contrast)
+                accent: '#2F5D4E',   // Secondary Green (Hover)
               },
-              wine: {
-                800: '#5e1919', // Deep wine red
-                900: '#4a0e0e',
-              },
-              forest: {
-                900: '#143322', // Deep green
+              grey: '#2B2B2B',       // Warm Dark Grey (Body Text)
+              gold: '#C9A24A',       // Warm Gold (Buttons/CTA)
+              olive: {
+                light: '#6F8F7A',    // Light Olive (Borders/Subtle)
               }
             }
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #fafaf9; /* stone-50 */
-        color: #292524; /* stone-800 */
+    }
+  </script>
+  <style>
+    body {
+      background-color: #fafaf9;
+      /* stone-50 */
+      color: #292524;
+      /* stone-800 */
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
       }
-      .fade-in {
-        animation: fadeIn 1s ease-out forwards;
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-    </style>
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -66,7 +91,13 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <!-- Formitable Widget -->
+  <script
+    src="https://widget.formitable.com/side/nl/eec23873/book?paymentProvider=Mollie&toolbar=true&mobileToolbar=true&tag=Website&color=%23CB9932&reopen=true&preview=false"></script>
+</body>
+
 </html>

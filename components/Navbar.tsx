@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { Logo } from './Logo';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -17,60 +18,66 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Background logic: Transparent at top of homepage, Solid cream elsewhere or when scrolled
+  // Background logic: Transparent at top of homepage, Solid Cream elsewhere or when scrolled
   const isHome = location.pathname === '/';
-  const navBackground = (isHome && !scrolled && !isOpen) ? 'bg-transparent text-white' : 'bg-stone-50 text-stone-900 shadow-sm';
-  const logoColor = (isHome && !scrolled && !isOpen) ? 'text-white' : 'text-stone-900';
-  const buttonColor = (isHome && !scrolled && !isOpen) ? 'white-outline' : 'outline';
+  const navBackground = (isHome && !scrolled && !isOpen)
+    ? 'bg-transparent text-brand-cream'
+    : 'bg-brand-cream/95 backdrop-blur-sm text-brand-green-dark shadow-md border-b border-brand-sand';
+
+  const logoColor = (isHome && !scrolled && !isOpen) ? 'text-brand-cream' : 'text-brand-green-dark';
 
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBackground} px-6 py-4 flex items-center justify-between`}>
         {/* Left: Hamburger */}
-        <button 
-          onClick={toggleMenu} 
+        <button
+          onClick={toggleMenu}
           className="p-2 -ml-2 hover:opacity-70 transition-opacity focus:outline-none"
           aria-label="Menu"
         >
-          {isOpen ? <X size={28} className="text-stone-900" /> : <Menu size={28} />}
+          {isOpen ? <X size={28} className="text-brand-gold" /> : <Menu size={28} className={isHome && !scrolled && !isOpen ? "text-brand-cream" : "text-brand-green-dark"} />}
         </button>
 
         {/* Center: Logo */}
-        <Link to="/" className={`absolute left-1/2 transform -translate-x-1/2 font-serif text-2xl tracking-widest font-bold uppercase ${isOpen ? 'text-stone-900' : logoColor}`}>
-          Clos
+        <Link to="/" className={`absolute left-1/2 transform -translate-x-1/2`}>
+          <Logo className={`h-12 w-auto transition-colors duration-300 ${isOpen ? 'text-brand-green-dark' : logoColor}`} />
         </Link>
 
         {/* Right: Reserve */}
-        <a 
-          href="#reserve" 
-          className={`hidden sm:inline-block px-6 py-2 border transition-all duration-300 text-xs tracking-widest uppercase font-medium ${
-            (isHome && !scrolled && !isOpen) 
-              ? 'border-white text-white hover:bg-white hover:text-stone-900' 
-              : 'border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-stone-50'
-          }`}
+        <a
+          href="#reserve"
+          className={`hidden sm:inline-block px-6 py-2 border transition-all duration-300 text-xs tracking-widest uppercase font-body font-bold ${(isHome && !scrolled && !isOpen)
+            ? 'border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark'
+            : 'border-brand-green-dark text-brand-green-dark hover:bg-brand-green-dark hover:text-brand-cream'
+            }`}
         >
           Reserveren
         </a>
       </nav>
 
       {/* Fullscreen Overlay Menu */}
-      <div 
-        className={`fixed inset-0 bg-stone-50 z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
-          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-        }`}
+      <div
+        className={`fixed inset-0 bg-brand-cream z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+          }`}
       >
         <div className="flex flex-col space-y-8 text-center">
-          <Link to="/" className="font-serif text-4xl text-stone-900 hover:text-wine-800 transition-colors">Home</Link>
-          <Link to="/groepen" className="font-serif text-4xl text-stone-900 hover:text-wine-800 transition-colors">Groepen</Link>
-          <Link to="/wijnproeven" className="font-serif text-4xl text-stone-900 hover:text-wine-800 transition-colors">Wijnproeven</Link>
-          <Link to="/vacatures" className="font-serif text-4xl text-stone-900 hover:text-wine-800 transition-colors">Vacatures</Link>
-          
-          <div className="w-12 h-px bg-stone-300 mx-auto my-8"></div>
-          
-          <div className="flex flex-col space-y-4 font-sans text-sm tracking-widest text-stone-500">
-            <a href="#" className="hover:text-stone-900">Wijnkaart</a>
-            <a href="#" className="hover:text-stone-900">Menukaart</a>
-            <a href="#" className="hover:text-stone-900">Contact</a>
+          <Link to="/" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Home</Link>
+          <Link to="/groepen" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Groepen</Link>
+          <Link to="/wijnproeven" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Wijnproeven</Link>
+          <Link to="/vacatures" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Vacatures</Link>
+
+          <div className="w-12 h-px bg-brand-sand mx-auto my-8"></div>
+
+          <div className="flex flex-col space-y-4 font-body text-sm tracking-widest text-brand-grey/70">
+            <a href="#" className="hover:text-brand-gold transition-colors">Wijnkaart</a>
+            <a href="#" className="hover:text-brand-gold transition-colors">Menukaart</a>
+            <a href="#" className="hover:text-brand-gold transition-colors">Contact</a>
+
+            <div className="pt-4">
+              <Link to="/contact" onClick={toggleMenu} className="px-8 py-3 bg-brand-green-dark text-brand-cream border border-brand-green-dark uppercase tracking-widest font-bold text-xs hover:bg-brand-gold hover:border-brand-gold hover:text-brand-green-dark transition-all">
+                Reserveren
+              </Link>
+            </div>
           </div>
         </div>
       </div>
