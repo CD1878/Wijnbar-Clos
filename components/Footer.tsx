@@ -4,8 +4,8 @@ import { Button } from './Button';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-green-dark py-16 px-6 border-t border-brand-gold/20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+    <footer className="bg-brand-green-dark py-10 md:py-16 px-6 border-t border-brand-gold/20">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
 
         {/* Address */}
         <div className="flex flex-col items-center md:items-start space-y-2">
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
         </div>
 
       </div>
-      <div className="mt-16 text-center">
+      <div className="mt-8 md:mt-16 text-center">
         <p className="text-brand-gold/50 text-xs font-sans tracking-widest uppercase">
           &copy; {new Date().getFullYear()} Wijnbar Clos. All rights reserved | Made by <a href="https://chefdigital.nl" target="_blank" className="hover:text-brand-gold transition-colors underline decoration-brand-gold/50 hover:decoration-brand-gold">Chef Digital</a>
         </p>
