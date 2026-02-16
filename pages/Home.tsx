@@ -6,10 +6,10 @@ import { WineStain } from '../components/WineStain';
 
 const VeneurMenu = () => (
   <div className="absolute top-1/3 left-8 md:left-24 flex flex-col items-start gap-8 z-30">
-    <Link to="/menu" className="group flex items-center gap-3">
+    <Link to="/menu?tab=menu" className="group flex items-center gap-3">
       <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300">MENU</span>
     </Link>
-    <Link to="/menu" className="group flex items-center gap-3 ml-6">
+    <Link to="/menu?tab=wijn" className="group flex items-center gap-3 ml-6">
       <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform -rotate-1">WIJN</span>
     </Link>
     <Link to="/vacatures" className="group flex items-center gap-3 ml-2">
@@ -60,8 +60,8 @@ const HeroSection = () => (
 
     {/* Mobile Links (Bottom) */}
     <div className="md:hidden absolute bottom-12 left-0 w-full flex justify-center gap-8 z-30 text-brand-cream/80">
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Menu</Link>
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Wijn</Link>
+      <Link to="/menu?tab=menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Menu</Link>
+      <Link to="/menu?tab=wijn" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Wijn</Link>
       <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Contact</Link>
     </div>
   </section>

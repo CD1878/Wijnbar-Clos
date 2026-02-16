@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 type Wine = {
@@ -258,8 +258,20 @@ const FoodItemRow = ({ item }: { item: FoodItem }) => (
     </div>
 );
 
+import { useSearchParams } from 'react-router-dom';
+
 export const Menu: React.FC = () => {
+    const [searchParams] = useSearchParams();
     const [activeTab, setActiveTab] = useState<'wijn' | 'menu'>('wijn');
+
+    useEffect(() => {
+        const tab = searchParams.get('tab');
+        if (tab === 'menu') {
+            setActiveTab('menu');
+        } else if (tab === 'wijn') {
+            setActiveTab('wijn');
+        }
+    }, [searchParams]);
 
     return (
         <div className="min-h-screen pt-16 md:pt-20 bg-brand-cream fade-in">
