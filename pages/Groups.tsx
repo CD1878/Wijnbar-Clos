@@ -42,7 +42,7 @@ export const Groups: React.FC = () => {
           <img
             src="/images/462383100_558693689856482_9159173755871425933_n.jpg"
             alt="Groepsdiner bij Clos"
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            className="w-full h-full object-contain bg-brand-dark/5 transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors duration-500"></div>
         </div>
