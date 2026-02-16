@@ -3,55 +3,51 @@ import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
 
+const WineRings = () => (
+  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none overflow-visible hidden md:block">
+    <style>{`
+      @keyframes ripple {
+        0% { transform: scale(0.8); opacity: 0.8; }
+        100% { transform: scale(2); opacity: 0; }
+      }
+      .wine-ring {
+        position: absolute;
+        top: 50%;
+        left: 20%; /* Shifted left */
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 2px solid rgba(74, 28, 47, 0.6); /* Wine color */
+        box-shadow: 0 0 10px rgba(74, 28, 47, 0.3);
+        animation: ripple 4s infinite linear;
+      }
+    `}</style>
+    {/* Multiple rings with delays */}
+    <div className="wine-ring w-32 h-32" style={{ animationDelay: '0s' }}></div>
+    <div className="wine-ring w-32 h-32" style={{ animationDelay: '1.3s' }}></div>
+    <div className="wine-ring w-32 h-32" style={{ animationDelay: '2.6s' }}></div>
+
+    {/* Static "stain" base */}
+    <div className="absolute top-1/2 left-[20%] -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#4a1c2f] opacity-20 blur-xl rounded-full mix-blend-screen"></div>
+  </div>
+);
+
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] w-full bg-[#1a0510] overflow-hidden flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
+  <section className="relative min-h-[90vh] w-full bg-[#1a0510] overflow-hidden flex flex-col items-center justify-center p-6">
 
-    {/* Large Background Logo */}
-    <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none select-none p-4 md:p-10">
-      <Logo className="w-full max-w-[90vw] md:max-w-[70vw] h-auto opacity-20 mix-blend-overlay" />
-    </div>
+    {/* Wine Ring Animation (Left) */}
+    <WineRings />
 
-    {/* Playful Floating Links (Desktop & Tablet) */}
-    <div className="absolute left-8 md:left-16 top-32 z-20 hidden md:flex flex-col gap-10 text-brand-cream">
-      <Link to="/menu" className="group">
-        <span className="font-display text-xl md:text-3xl tracking-widest uppercase hover:text-brand-gold transition-colors duration-300 block -rotate-6 group-hover:rotate-0 transform transition-transform drop-shadow-lg">
-          Menu
-        </span>
-      </Link>
-      <Link to="/menu" className="group pl-16">
-        <span className="font-display text-xl md:text-3xl tracking-widest uppercase hover:text-brand-gold transition-colors duration-300 block rotate-6 group-hover:rotate-0 transform transition-transform drop-shadow-lg">
-          Wijn
-        </span>
-      </Link>
-      <Link to="/jobs" className="group">
-        <span className="font-display text-xl md:text-3xl tracking-widest uppercase hover:text-brand-gold transition-colors duration-300 block -rotate-3 group-hover:rotate-0 transform transition-transform drop-shadow-lg">
-          Vacatures
-        </span>
-      </Link>
-      <a href="https://instagram.com" target="_blank" rel="noreferrer" className="mt-12 text-3xl hover:text-brand-gold transition-colors pl-8">
-        <i className="fa-brands fa-instagram"></i>
-      </a>
-    </div>
+    {/* Centered Logo (Brighter, Smaller, Center) */}
+    <div className="z-20 flex flex-col items-center text-center animate-fade-in-up">
+      <Logo className="w-[60vw] md:w-[350px] h-auto text-white brightness-200 drop-shadow-2xl" />
+      <span className="font-display text-brand-gold text-lg md:text-2xl tracking-[0.4em] uppercase mt-6 opacity-90">
+        Gastro Wijnbar
+      </span>
 
-    {/* Hero Image with Organic Shape */}
-    <div className="relative z-10 w-full max-w-[500px] md:max-w-[650px] aspect-[4/5] md:aspect-[5/4] ml-auto md:mr-12">
-      <div
-        className="w-full h-full overflow-hidden"
-        style={{
-          borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
-        }}
-      >
-        <img
-          src="/images/hero-update.jpg"
-          alt="Sfeervolle wijnbar"
-          className="w-full h-full object-cover scale-110"
-        />
-      </div>
-
-      {/* Floating Badge */}
-      <div className="absolute -bottom-8 -left-4 md:-left-12 z-30">
+      {/* CTA Button */}
+      <div className="mt-12">
         <Link to="#reserve">
-          <Button variant="primary" className="shadow-2xl bg-brand-gold border-none text-brand-dark hover:bg-brand-cream py-4 px-10 text-xl rounded-full font-display tracking-wider">
+          <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-white hover:text-brand-dark border-none py-4 px-10 text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
             Reserveren
           </Button>
         </Link>
@@ -59,9 +55,10 @@ const HeroSection = () => (
     </div>
 
     {/* Mobile Links (Bottom) */}
-    <div className="md:hidden absolute bottom-8 left-0 w-full flex justify-center gap-6 z-30 text-brand-cream">
-      <Link to="/menu" className="font-display uppercase tracking-widest text-sm border-b border-brand-cream/30 pb-1">Menu</Link>
-      <Link to="/menu" className="font-display uppercase tracking-widest text-sm border-b border-brand-cream/30 pb-1">Wijn</Link>
+    <div className="md:hidden absolute bottom-8 left-0 w-full flex justify-center gap-6 z-30 text-brand-cream/60">
+      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent hover:border-brand-gold hover:text-brand-gold transition-colors pb-1">Menu</Link>
+      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent hover:border-brand-gold hover:text-brand-gold transition-colors pb-1">Wijn</Link>
+      <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-transparent hover:border-brand-gold hover:text-brand-gold transition-colors pb-1">Contact</Link>
     </div>
   </section>
 );
