@@ -73,7 +73,7 @@ export const Tasting: React.FC = () => {
 
           <div className="mt-12 rounded-none overflow-hidden h-[300px] shadow-xl relative group">
             <img
-              src="/images/photo-2.jpg"
+              src="/images/home-2.jpg"
               alt="Wine tasting"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />

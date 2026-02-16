@@ -18,13 +18,13 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Background logic: Transparent at top of homepage, Solid Cream elsewhere or when scrolled
+  // Background logic: Transparent at top of homepage, Solid Dark Green elsewhere or when scrolled
   const isHome = location.pathname === '/';
   const navBackground = (isHome && !scrolled && !isOpen)
     ? 'bg-transparent text-brand-cream'
-    : 'bg-brand-cream/95 backdrop-blur-sm text-brand-green-dark shadow-md border-b border-brand-sand';
+    : 'bg-brand-green-dark/95 backdrop-blur-sm text-brand-cream shadow-md border-b border-brand-gold/20';
 
-  const logoColor = (isHome && !scrolled && !isOpen) ? 'text-brand-cream' : 'text-brand-green-dark';
+  const logoColor = 'text-brand-cream'; // Always cream as logo is white/light image
 
   return (
     <>
@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           className="p-2 -ml-2 hover:opacity-70 transition-opacity focus:outline-none"
           aria-label="Menu"
         >
-          {isOpen ? <X size={28} className="text-brand-gold" /> : <Menu size={28} className={isHome && !scrolled && !isOpen ? "text-brand-cream" : "text-brand-green-dark"} />}
+          {isOpen ? <X size={28} className="text-brand-gold" /> : <Menu size={28} className="text-brand-cream" />}
         </button>
 
         {/* Center: Logo */}
@@ -46,10 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         {/* Right: Reserve */}
         <a
           href="#reserve"
-          className={`hidden sm:inline-block px-6 py-2 border transition-all duration-300 text-xs tracking-widest uppercase font-body font-bold ${(isHome && !scrolled && !isOpen)
-            ? 'border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark'
-            : 'border-brand-green-dark text-brand-green-dark hover:bg-brand-green-dark hover:text-brand-cream'
-            }`}
+          className={`hidden sm:inline-block px-6 py-2 border transition-all duration-300 text-xs tracking-widest uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark`}
         >
           Reserveren
         </a>
@@ -69,8 +66,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <div className="w-12 h-px bg-brand-sand mx-auto my-8"></div>
 
           <div className="flex flex-col space-y-4 font-body text-sm tracking-widest text-brand-grey/70">
-            <a href="#" className="hover:text-brand-gold transition-colors">Wijnkaart</a>
-            <a href="#" className="hover:text-brand-gold transition-colors">Menukaart</a>
+            <Link to="/menu" onClick={toggleMenu} className="hover:text-brand-gold transition-colors">Wijnkaart</Link>
+            <Link to="/menu" onClick={toggleMenu} className="hover:text-brand-gold transition-colors">Menukaart</Link>
             <a href="#" className="hover:text-brand-gold transition-colors">Contact</a>
 
             <div className="pt-4">

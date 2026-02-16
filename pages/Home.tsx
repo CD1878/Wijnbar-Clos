@@ -24,12 +24,16 @@ const HeroSection = () => (
 
       <div className="flex flex-col items-center w-full mt-24 md:mt-0">
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <Button variant="white-outline" onClick={() => console.log('Wijnkaart PDF')}>
-            Bekijk Wijnkaart
-          </Button>
-          <Button variant="white-outline" onClick={() => console.log('Menu PDF')}>
-            Bekijk Menukaart
-          </Button>
+          <Link to="/menu">
+            <Button variant="white-outline">
+              Bekijk Wijnkaart
+            </Button>
+          </Link>
+          <Link to="/menu">
+            <Button variant="white-outline">
+              Bekijk Menukaart
+            </Button>
+          </Link>
         </div>
         <div className="mt-6">
           <Button variant="primary" className="bg-brand-gold text-brand-forest border-brand-gold hover:bg-brand-cream hover:text-brand-forest hover:border-brand-cream">
@@ -135,16 +139,16 @@ const AboutSection = () => (
 
 const QuickLinks = () => {
   const links = [
-    { title: 'Wijnkaart', img: '/images/link-wijnkaart.jpg', action: 'Bekijk' },
-    { title: 'Menukaart', img: '/images/link-menukaart.png', action: 'Bekijk' },
-    { title: 'Reserveren', img: '/images/link-reserveren.jpg', action: 'Boek nu' },
+    { title: 'Wijnkaart', img: '/images/link-wijnkaart.jpg', action: 'Bekijk', link: '/menu' },
+    { title: 'Menukaart', img: '/images/link-menukaart.png', action: 'Bekijk', link: '/menu' },
+    { title: 'Reserveren', img: '/images/link-reserveren.jpg', action: 'Boek nu', link: '#reserve' },
   ];
 
   return (
     <section className="py-12 md:py-24 px-4 bg-brand-sand">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {links.map((link) => (
-          <div key={link.title} className="relative group cursor-pointer h-[300px] overflow-hidden border border-brand-green-dark/10 hover:border-brand-gold/40 transition-colors shadow-sm hover:shadow-xl">
+          <Link to={link.link} key={link.title} className="relative group cursor-pointer h-[300px] overflow-hidden border border-brand-green-dark/10 hover:border-brand-gold/40 transition-colors shadow-sm hover:shadow-xl">
             <img
               src={link.img}
               alt={link.title}
@@ -157,7 +161,7 @@ const QuickLinks = () => {
                 {link.action}
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
