@@ -3,62 +3,74 @@ import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
 
-const WineRings = () => (
-  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none overflow-visible hidden md:block">
-    <style>{`
-      @keyframes ripple {
-        0% { transform: scale(0.8); opacity: 0.8; }
-        100% { transform: scale(2); opacity: 0; }
-      }
-      .wine-ring {
-        position: absolute;
-        top: 50%;
-        left: 20%; /* Shifted left */
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        border: 2px solid rgba(74, 28, 47, 0.6); /* Wine color */
-        box-shadow: 0 0 10px rgba(74, 28, 47, 0.3);
-        animation: ripple 4s infinite linear;
-      }
-    `}</style>
-    {/* Multiple rings with delays */}
-    <div className="wine-ring w-32 h-32" style={{ animationDelay: '0s' }}></div>
-    <div className="wine-ring w-32 h-32" style={{ animationDelay: '1.3s' }}></div>
-    <div className="wine-ring w-32 h-32" style={{ animationDelay: '2.6s' }}></div>
+const StaticWineStains = () => (
+  <div className="absolute left-[10%] top-[40%] -translate-y-1/2 w-[600px] h-[600px] pointer-events-none select-none opacity-40 mix-blend-screen">
+    {/* Main Ring - Irregular */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-[16px] border-[#591c35] rounded-full blur-[2px]"
+      style={{ borderRadius: '45% 55% 40% 60% / 50% 60% 30% 70%' }}></div>
 
-    {/* Static "stain" base */}
-    <div className="absolute top-1/2 left-[20%] -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#4a1c2f] opacity-20 blur-xl rounded-full mix-blend-screen"></div>
+    {/* Inner Ring - Fainter */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-[4px] border-[#591c35] rounded-full opacity-60 blur-[1px]"
+      style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%', transform: 'translate(-55%, -45%) rotate(20deg)' }}></div>
+
+    {/* Splatters */}
+    <div className="absolute top-[20%] left-[30%] w-4 h-4 bg-[#591c35] rounded-full blur-[1px]"></div>
+    <div className="absolute top-[25%] left-[25%] w-2 h-2 bg-[#591c35] rounded-full"></div>
+    <div className="absolute bottom-[30%] right-[30%] w-6 h-6 bg-[#591c35] rounded-full blur-[2px] opacity-80"></div>
+    <div className="absolute bottom-[28%] right-[25%] w-3 h-3 bg-[#591c35] rounded-full opacity-60"></div>
+  </div>
+);
+
+const VeneurMenu = () => (
+  <div className="absolute top-1/3 left-8 md:left-24 flex flex-col items-start gap-6 z-30">
+    <Link to="/menu" className="font-display text-brand-cream text-lg md:text-xl tracking-[0.2em] transform -rotate-2 hover:rotate-0 transition-transform duration-300 hover:text-brand-gold">
+      MENU
+    </Link>
+    <Link to="/menu" className="font-display text-brand-cream text-lg md:text-xl tracking-[0.2em] transform rotate-1 hover:rotate-0 transition-transform duration-300 hover:text-brand-gold ml-4">
+      WIJN
+    </Link>
+    <Link to="/vacatures" className="font-display text-brand-cream text-lg md:text-xl tracking-[0.2em] transform -rotate-1 hover:rotate-0 transition-transform duration-300 hover:text-brand-gold ml-2">
+      VACATURES
+    </Link>
+    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-cream text-2xl hover:text-brand-gold transition-colors mt-4 ml-6">
+      <i className="fa-brands fa-instagram"></i>
+    </a>
   </div>
 );
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] w-full bg-[#1a0510] overflow-hidden flex flex-col items-center justify-center p-6">
+  <section className="relative min-h-[90vh] w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6">
 
-    {/* Wine Ring Animation (Left) */}
-    <WineRings />
+    {/* Static Wine Stains (Left) */}
+    <StaticWineStains />
 
-    {/* Centered Logo (Brighter, Smaller, Center) */}
-    <div className="z-20 flex flex-col items-center text-center animate-fade-in-up">
-      <Logo className="w-[60vw] md:w-[350px] h-auto text-white brightness-200 drop-shadow-2xl" />
-      <span className="font-display text-brand-gold text-lg md:text-2xl tracking-[0.4em] uppercase mt-6 opacity-90">
+    {/* Veneur Style Menu (Left, Stacked) */}
+    <div className="hidden md:block">
+      <VeneurMenu />
+    </div>
+
+    {/* Centered Logo (Bright, Small, Center) */}
+    <div className="z-20 flex flex-col items-center text-center">
+      <Logo className="w-[50vw] md:w-[250px] h-auto text-white brightness-200 drop-shadow-lg opacity-90" />
+      <span className="font-display text-brand-gold text-sm md:text-lg tracking-[0.5em] uppercase mt-4">
         Gastro Wijnbar
       </span>
 
-      {/* CTA Button */}
-      <div className="mt-12">
+      {/* Reserve Button (Center Bottom) */}
+      <div className="mt-16">
         <Link to="#reserve">
-          <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-white hover:text-brand-dark border-none py-4 px-10 text-lg rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+          <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-brand-cream hover:text-brand-dark border-none py-3 px-8 text-base rounded-full shadow-lg transition-all duration-300">
             Reserveren
           </Button>
         </Link>
       </div>
     </div>
 
-    {/* Mobile Links (Bottom) */}
-    <div className="md:hidden absolute bottom-8 left-0 w-full flex justify-center gap-6 z-30 text-brand-cream/60">
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent hover:border-brand-gold hover:text-brand-gold transition-colors pb-1">Menu</Link>
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent hover:border-brand-gold hover:text-brand-gold transition-colors pb-1">Wijn</Link>
-      <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-transparent hover:border-brand-gold hover:text-brand-gold transition-colors pb-1">Contact</Link>
+    {/* Mobile Links (Bottom - Keeping fallback for mobile) */}
+    <div className="md:hidden absolute bottom-12 left-0 w-full flex justify-center gap-8 z-30 text-brand-cream/80">
+      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent pb-1">Menu</Link>
+      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent pb-1">Wijn</Link>
+      <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-transparent pb-1">Contact</Link>
     </div>
   </section>
 );
