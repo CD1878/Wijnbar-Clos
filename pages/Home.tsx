@@ -1,20 +1,14 @@
 import React from 'react';
 import { Button } from '../components/Button';
+import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => (
   <section className="relative min-h-[90vh] w-full bg-[#1a0510] overflow-hidden flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
 
-
-
-    {/* Large Background Typography */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center z-0 pointer-events-none select-none">
-      <h1 className="font-display text-[25vw] leading-none text-[#e8dcc5] opacity-10 tracking-tighter mix-blend-overlay">
-        CLOS
-      </h1>
-      <span className="font-display text-2xl md:text-5xl text-[#e8dcc5] opacity-30 tracking-[0.5em] uppercase mt-[-2vw] mix-blend-overlay">
-        Gastro Wijnbar
-      </span>
+    {/* Large Background Logo */}
+    <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none select-none p-4 md:p-10">
+      <Logo className="w-full max-w-[90vw] md:max-w-[70vw] h-auto opacity-20 mix-blend-overlay" />
     </div>
 
     {/* Playful Floating Links (Desktop & Tablet) */}
