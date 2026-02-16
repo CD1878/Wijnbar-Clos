@@ -34,7 +34,7 @@ const HeroSection = () => (
     </div>
 
     {/* Hero Image with Organic Shape */}
-    <div className="relative z-10 w-full max-w-[500px] md:max-w-[650px] aspect-[4/5] md:aspect-[5/4] animate-fade-in-up ml-auto md:mr-12">
+    <div className="relative z-10 w-full max-w-[500px] md:max-w-[650px] aspect-[4/5] md:aspect-[5/4] ml-auto md:mr-12">
       <div
         className="w-full h-full overflow-hidden"
         style={{
@@ -46,8 +46,6 @@ const HeroSection = () => (
           alt="Sfeervolle wijnbar"
           className="w-full h-full object-cover scale-110"
         />
-        {/* Color wash overlay */}
-        <div className="absolute inset-0 bg-[#4a1c2f]/10 mix-blend-overlay"></div>
       </div>
 
       {/* Floating Badge */}
