@@ -36,7 +36,7 @@ const HeroSection = () => (
     {/* Hero Image with Organic Shape */}
     <div className="relative z-10 w-full max-w-[500px] md:max-w-[650px] aspect-[4/5] md:aspect-[5/4] animate-fade-in-up ml-auto md:mr-12">
       <div
-        className="w-full h-full overflow-hidden shadow-2xl transition-all duration-1000 hover:scale-[1.02] border border-white/5"
+        className="w-full h-full overflow-hidden"
         style={{
           borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
         }}
@@ -44,10 +44,10 @@ const HeroSection = () => (
         <img
           src="/images/hero-update.jpg"
           alt="Sfeervolle wijnbar"
-          className="w-full h-full object-cover scale-110 opacity-90 hover:opacity-100 transition-opacity duration-700"
+          className="w-full h-full object-cover scale-110"
         />
         {/* Color wash overlay */}
-        <div className="absolute inset-0 bg-[#4a1c2f]/20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[#4a1c2f]/10 mix-blend-overlay"></div>
       </div>
 
       {/* Floating Badge */}
