@@ -58,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           }`}
       >
         <div className="flex flex-col space-y-8 text-center">
-          <Link to="/" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Home</Link>
+
           <Link to="/groepen" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Groepen</Link>
           <Link to="/wijnproeven" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Wijnproeven</Link>
           <Link to="/vacatures" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-gold transition-all hover:scale-105 duration-300">Vacatures</Link>
@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <div className="flex flex-col space-y-4 font-body text-sm tracking-widest text-brand-grey/70">
             <Link to="/menu" onClick={toggleMenu} className="hover:text-brand-gold transition-colors">Wijnkaart</Link>
             <Link to="/menu" onClick={toggleMenu} className="hover:text-brand-gold transition-colors">Menukaart</Link>
-            <a href="#" className="hover:text-brand-gold transition-colors">Contact</a>
+            <Link to="/contact" onClick={toggleMenu} className="hover:text-brand-gold transition-colors">Contact</Link>
 
             <div className="pt-4">
               <Link to="/contact" onClick={toggleMenu} className="px-8 py-3 bg-brand-green-dark text-brand-cream border border-brand-green-dark uppercase tracking-widest font-bold text-xs hover:bg-brand-gold hover:border-brand-gold hover:text-brand-green-dark transition-all">

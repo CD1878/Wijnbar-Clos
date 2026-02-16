@@ -3,11 +3,11 @@ import { Button } from '../components/Button';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => (
-  <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+  <section className="relative h-[85vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
     {/* Background Image with Overlay */}
     <div className="absolute inset-0 z-0">
       <img
-        src="/images/hero.jpg"
+        src="/images/hero-update.jpg"
         alt="Sfeervolle wijnbar"
         className="w-full h-full object-cover"
       />
@@ -47,11 +47,11 @@ const HeroSection = () => (
 
 const PhotoGrid = () => {
   const images = [
-    '/images/gallery-1.jpg',
-    '/images/gallery-2.jpg',
-    '/images/gallery-3.jpg',
-    '/images/gallery-4.jpg',
-    '/images/gallery-5.jpg',
+    '/images/gallery-update.jpg',
+    '/images/gallery-update-2.jpg',
+    '/images/gallery-update-3.jpg',
+    '/images/gallery-update-4.jpg',
+    '/images/gallery-update-5.jpg',
   ];
 
   return (
@@ -76,14 +76,14 @@ const PhotoGrid = () => {
         <div className="flex flex-col gap-4 md:gap-6">
           <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
             <img
-              src="/images/gallery-1.jpg"
+              src="/images/gallery-update.jpg"
               alt="Sfeerbeeld 1"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
             />
           </div>
           <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
             <img
-              src="/images/gallery-2.jpg"
+              src="/images/gallery-update-2.jpg"
               alt="Sfeerbeeld 2"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
             />
@@ -93,7 +93,7 @@ const PhotoGrid = () => {
         {/* Col 2 (Tall/Center) */}
         <div className="group overflow-hidden relative h-[400px] md:h-auto border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
           <img
-            src="/images/gallery-5.jpg"
+            src="/images/gallery-update-5.jpg"
             alt="Sfeerbeeld 5"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
           />
@@ -103,14 +103,14 @@ const PhotoGrid = () => {
         <div className="flex flex-col gap-4 md:gap-6">
           <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
             <img
-              src="/images/gallery-3.jpg"
+              src="/images/gallery-update-3.jpg"
               alt="Sfeerbeeld 3"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
             />
           </div>
           <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
             <img
-              src="/images/gallery-4.jpg"
+              src="/images/gallery-update-4.jpg"
               alt="Sfeerbeeld 4"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
             />
@@ -123,7 +123,7 @@ const PhotoGrid = () => {
 };
 
 const AboutSection = () => (
-  <section className="py-24 px-6 relative overflow-hidden bg-brand-beige">
+  <section className="py-16 md:py-24 px-6 relative overflow-hidden bg-brand-beige">
     {/* Decorative gradient blob */}
     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-sand/50 to-transparent pointer-events-none"></div>
 

@@ -4,7 +4,7 @@ import { Button } from './Button';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-green-dark py-10 md:py-16 px-6 border-t border-brand-gold/20">
+    <footer className="bg-brand-green-dark py-12 md:py-16 px-6 border-t border-brand-gold/20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
 
         {/* Address */}
@@ -23,6 +23,9 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-start space-y-2">
           <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-brand-gold mb-2">Openingstijden</h4>
           <div className="grid grid-cols-[100px_1fr] gap-4 font-sans text-sm text-brand-cream/80 text-left">
+            <span>Maandag</span>
+            <span>Gesloten</span>
+
             <span>Dinsdag</span>
             <span>17:00 - 23:00</span>
 

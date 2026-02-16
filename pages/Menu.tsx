@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 type Wine = {
     name: string;
@@ -154,6 +155,75 @@ const wineData: WineCategory[] = [
     }
 ];
 
+type FoodItem = {
+    name: string;
+    description?: string;
+    price: number;
+};
+
+type FoodCategory = {
+    title: string;
+    description?: string;
+    items: FoodItem[];
+};
+
+const foodData: FoodCategory[] = [
+    {
+        title: "Winter menu",
+        description: "vast menu | per tafel te bestellen",
+        items: [
+            { name: "Winter menu 3 gangen", price: 45 },
+            { name: "Winter menu 4 gangen", price: 55 },
+            { name: "Winter menu 5 gangen (inclusief kaas)", price: 65 },
+        ]
+    },
+    {
+        title: "Fingerfoods",
+        items: [
+            { name: "Oesters per stuk", price: 4.5 },
+            { name: "Ierse oester", description: "schuim van gerookte paling", price: 7 },
+            { name: "Jamón Ibérico", description: "cebo de campo", price: 17 },
+            { name: "Rillettes van makreel", description: "lavas, granny smith", price: 10 },
+            { name: "Kaaskroketjes van L'Etivaz", description: "4 stuks, bieslookmayonaise", price: 11 },
+            { name: "Mantequilla olijven", price: 5 },
+            { name: "Zuurdesem met boter", price: 6 },
+            { name: "Kazen van Eriks", price: 16 },
+        ]
+    },
+    {
+        title: "Voorgerechten",
+        items: [
+            { name: "Gele biet", description: "spinazie créme, Colombo kerrie, krokante mais", price: 16 },
+            { name: "Crudo van zeebaars", description: "duindoornbes, jalapeño, koriander", price: 17 },
+            { name: "Steak tartaar", description: "tomatenkroepoek, mierikswortel", price: 16 },
+            { name: "BBQ Spitskool", description: "Duxelles, hazelnoot, oude Stolwijker, beurre noisette dressing", price: 17 },
+        ]
+    },
+    {
+        title: "Hoofdgerechten",
+        items: [
+            { name: "Kabeljauw", description: "gestoofde prei, Hollandaise van zuurkool", price: 28 },
+            { name: "Wilde paddenstoelen", description: "schorseneren, Belper Knolle, saus van gepofte knoflook", price: 26 },
+            { name: "Kalfssukade", description: "gekarameliseerde sjalot, knolselderij créme, jus de veau", price: 28 },
+        ]
+    },
+    {
+        title: "Bijgerechten",
+        items: [
+            { name: "Little gem salade", description: "Dressing van dragon", price: 5 },
+            { name: "Pommes frites", description: "huisgemaakte mayonaise", price: 6 },
+        ]
+    },
+    {
+        title: "Dessert",
+        items: [
+            { name: "Chocolade taartje", description: "amarena kersen, pecannoot, kersen sorbet", price: 12 },
+            { name: "Kaas van buurman Erik’s", description: "4 kazen | rozijnenbrood", price: 16 },
+            { name: "Wisselende crème brûlée", price: 10 },
+        ]
+    }
+];
+
 const WineItem = ({ wine }: { wine: Wine }) => (
     <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-brand-green-dark/10 pb-4 mb-6 group hover:bg-brand-gold/5 transition-colors p-3 -mx-3 rounded-lg">
         <div className="flex flex-col">
@@ -172,6 +242,18 @@ const WineItem = ({ wine }: { wine: Wine }) => (
                 <span className="text-xs text-brand-gold uppercase tracking-widest mb-1">Fles</span>
                 <span>€ {wine.priceBottle.toFixed(2)}</span>
             </div>
+        </div>
+    </div>
+);
+
+const FoodItemRow = ({ item }: { item: FoodItem }) => (
+    <div className="flex justify-between items-baseline border-b border-brand-green-dark/10 pb-4 mb-4 group hover:bg-brand-gold/5 transition-colors p-3 -mx-3 rounded-lg">
+        <div className="flex flex-col max-w-[80%]">
+            <h4 className="font-display text-xl text-brand-green-dark group-hover:text-brand-gold transition-colors">{item.name}</h4>
+            {item.description && <p className="font-body text-brand-grey/80 italic text-sm mt-1">{item.description}</p>}
+        </div>
+        <div className="font-display text-lg text-brand-green-dark">
+            € {item.price.toFixed(2)}
         </div>
     </div>
 );
@@ -223,9 +305,28 @@ export const Menu: React.FC = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-20 animate-fade-in">
-                        <p className="font-body text-2xl text-brand-green-dark italic">Menukaart volgt binnenkort.</p>
-                        <p className="font-sans text-brand-grey mt-4">Bekijk voor nu onze wijnkaart.</p>
+                    <div className="animate-fade-in space-y-12">
+
+                        <div className="glass p-8 border border-brand-gold/20 bg-brand-gold/5 mb-12 text-center rounded-xl">
+                            <h3 className="font-display text-3xl text-brand-green-dark mb-4 uppercase tracking-widest">Diner</h3>
+                            <p className="font-body text-lg text-brand-grey/90 leading-relaxed max-w-2xl mx-auto">
+                                Net als bij wijn vinden we het belangrijk om nieuwe smaken te ontdekken en te blijven experimenteren. In het restaurant word je meegenomen door onze chef en zijn team met originele gerechten die geweldig zijn om te combineren met wijn. Het steeds wisselende menu is geïnspireerd op de wijngebieden van onze wijnboeren, en uitgevoerd met een geheel eigen stijl.
+                            </p>
+                        </div>
+
+                        {foodData.map((category, index) => (
+                            <div key={index}>
+                                <h3 className="font-display text-3xl text-brand-gold mb-2 text-center uppercase tracking-[0.2em]">{category.title}</h3>
+                                {category.description && <p className="font-body text-brand-grey/60 text-center italic mb-8">{category.description}</p>}
+                                {!category.description && <div className="h-8"></div>}
+
+                                <div className="grid grid-cols-1 gap-1">
+                                    {category.items.map((item, iIndex) => (
+                                        <FoodItemRow key={iIndex} item={item} />
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 )}
             </div>
