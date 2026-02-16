@@ -3,36 +3,52 @@ import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
 
-const StaticWineStains = () => (
-  <div className="absolute left-[10%] top-[40%] -translate-y-1/2 w-[600px] h-[600px] pointer-events-none select-none opacity-40 mix-blend-screen">
-    {/* Main Ring - Irregular */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-[16px] border-[#591c35] rounded-full blur-[2px]"
-      style={{ borderRadius: '45% 55% 40% 60% / 50% 60% 30% 70%' }}></div>
+const RealisticWineStains = () => (
+  <div className="absolute left-[5%] top-[45%] -translate-y-1/2 w-[700px] h-[700px] pointer-events-none select-none mix-blend-screen opacity-60">
+    {/* Complex Wine Ring 1 - The main glass impression */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full"
+      style={{
+        background: 'radial-gradient(transparent 60%, rgba(89, 28, 53, 0.4) 65%, rgba(89, 28, 53, 0.9) 70%, transparent 72%)',
+        borderRadius: '52% 48% 62% 38% / 54% 60% 40% 46%',
+        filter: 'blur(1px)',
+        transform: 'rotate(15deg)'
+      }}></div>
 
-    {/* Inner Ring - Fainter */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-[4px] border-[#591c35] rounded-full opacity-60 blur-[1px]"
-      style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%', transform: 'translate(-55%, -45%) rotate(20deg)' }}></div>
+    {/* Darker edge pool for Ring 1 */}
+    <div className="absolute top-[55%] left-[60%] w-24 h-4 bg-[#591c35] rounded-full blur-[2px] opacity-80 rotate-45"></div>
 
-    {/* Splatters */}
-    <div className="absolute top-[20%] left-[30%] w-4 h-4 bg-[#591c35] rounded-full blur-[1px]"></div>
-    <div className="absolute top-[25%] left-[25%] w-2 h-2 bg-[#591c35] rounded-full"></div>
-    <div className="absolute bottom-[30%] right-[30%] w-6 h-6 bg-[#591c35] rounded-full blur-[2px] opacity-80"></div>
-    <div className="absolute bottom-[28%] right-[25%] w-3 h-3 bg-[#591c35] rounded-full opacity-60"></div>
+    {/* Complex Wine Ring 2 - Overlapping */}
+    <div className="absolute top-[45%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full"
+      style={{
+        background: 'radial-gradient(transparent 62%, rgba(89, 28, 53, 0.3) 66%, rgba(89, 28, 53, 0.8) 70%, transparent 73%)',
+        borderRadius: '40% 60% 50% 50% / 45% 55% 45% 55%',
+        filter: 'blur(0.5px)',
+        transform: 'translate(-20px, -20px) rotate(-10deg)'
+      }}></div>
+
+    {/* Splatters and Drips */}
+    <div className="absolute top-[30%] left-[30%] w-3 h-3 bg-[#591c35] rounded-full blur-[0.5px]"></div>
+    <div className="absolute top-[32%] left-[28%] w-1.5 h-1.5 bg-[#591c35] rounded-full opacity-70"></div>
+    <div className="absolute bottom-[35%] right-[35%] w-5 h-5 bg-[#591c35] rounded-full blur-[4px] opacity-60"></div>
+    <div className="absolute bottom-[38%] right-[32%] w-2 h-2 bg-[#591c35] rounded-full opacity-80"></div>
+
+    {/* Large fainter wash */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#591c35] opacity-10 rounded-full blur-3xl pointer-events-none"></div>
   </div>
 );
 
 const VeneurMenu = () => (
-  <div className="absolute top-1/3 left-8 md:left-24 flex flex-col items-start gap-6 z-30">
-    <Link to="/menu" className="font-display text-brand-cream text-lg md:text-xl tracking-[0.2em] transform -rotate-2 hover:rotate-0 transition-transform duration-300 hover:text-brand-gold">
-      MENU
+  <div className="absolute top-1/3 left-8 md:left-24 flex flex-col items-start gap-8 z-30">
+    <Link to="/menu" className="group flex items-center gap-3">
+      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300">MENU</span>
     </Link>
-    <Link to="/menu" className="font-display text-brand-cream text-lg md:text-xl tracking-[0.2em] transform rotate-1 hover:rotate-0 transition-transform duration-300 hover:text-brand-gold ml-4">
-      WIJN
+    <Link to="/menu" className="group flex items-center gap-3 ml-6">
+      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform -rotate-1">WIJN</span>
     </Link>
-    <Link to="/vacatures" className="font-display text-brand-cream text-lg md:text-xl tracking-[0.2em] transform -rotate-1 hover:rotate-0 transition-transform duration-300 hover:text-brand-gold ml-2">
-      VACATURES
+    <Link to="/vacatures" className="group flex items-center gap-3 ml-2">
+      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform rotate-1">VACATURES</span>
     </Link>
-    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-cream text-2xl hover:text-brand-gold transition-colors mt-4 ml-6">
+    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-cream text-2xl hover:text-brand-gold transition-colors mt-4 ml-8 opacity-80 hover:opacity-100">
       <i className="fa-brands fa-instagram"></i>
     </a>
   </div>
@@ -41,36 +57,36 @@ const VeneurMenu = () => (
 const HeroSection = () => (
   <section className="relative min-h-[90vh] w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6">
 
-    {/* Static Wine Stains (Left) */}
-    <StaticWineStains />
+    {/* Realistic Wine Glass Stains (Left) */}
+    <RealisticWineStains />
 
     {/* Veneur Style Menu (Left, Stacked) */}
     <div className="hidden md:block">
       <VeneurMenu />
     </div>
 
-    {/* Centered Logo (Bright, Small, Center) */}
+    {/* Centered Logo */}
     <div className="z-20 flex flex-col items-center text-center">
-      <Logo className="w-[50vw] md:w-[250px] h-auto text-white brightness-200 drop-shadow-lg opacity-90" />
-      <span className="font-display text-brand-gold text-sm md:text-lg tracking-[0.5em] uppercase mt-4">
+      <Logo className="w-[50vw] md:w-[280px] h-auto text-white brightness-200 drop-shadow-2xl opacity-95" />
+      <span className="font-display text-brand-gold/80 text-sm md:text-lg tracking-[0.6em] uppercase mt-6 ml-2">
         Gastro Wijnbar
       </span>
 
-      {/* Reserve Button (Center Bottom) */}
+      {/* Reserve Button */}
       <div className="mt-16">
         <Link to="#reserve">
-          <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-brand-cream hover:text-brand-dark border-none py-3 px-8 text-base rounded-full shadow-lg transition-all duration-300">
+          <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-white hover:text-brand-dark border-none py-3 px-10 text-base rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
             Reserveren
           </Button>
         </Link>
       </div>
     </div>
 
-    {/* Mobile Links (Bottom - Keeping fallback for mobile) */}
+    {/* Mobile Links (Bottom) */}
     <div className="md:hidden absolute bottom-12 left-0 w-full flex justify-center gap-8 z-30 text-brand-cream/80">
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent pb-1">Menu</Link>
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-transparent pb-1">Wijn</Link>
-      <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-transparent pb-1">Contact</Link>
+      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Menu</Link>
+      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Wijn</Link>
+      <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Contact</Link>
     </div>
   </section>
 );
