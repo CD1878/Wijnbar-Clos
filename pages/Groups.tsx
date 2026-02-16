@@ -30,7 +30,7 @@ export const Groups: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-cream rounded-full blur-3xl -z-10"></div>
 
       <header className="mb-12 md:mb-20 text-center relative z-10">
-        <h1 className="font-display text-4xl md:text-7xl text-brand-dark mb-4 md:mb-6 drop-shadow-sm">Groepen & Privé</h1>
+        <h1 className="font-display text-4xl md:text-7xl text-brand-dark mb-4 md:mb-6 drop-shadow-sm">Groepen</h1>
         <p className="font-body text-base md:text-xl text-brand-dark/80 max-w-2xl mx-auto leading-relaxed font-light">
           Of het nu gaat om een zakelijke borrel, een verjaardag of een intiem diner met een grote groep; bij Clos verzorgen we graag een middag of avond op maat.
         </p>
