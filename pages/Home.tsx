@@ -2,94 +2,74 @@ import React from 'react';
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
-
-const RealisticWineStains = () => (
-  <div className="absolute left-[5%] top-[45%] -translate-y-1/2 w-[700px] h-[700px] pointer-events-none select-none mix-blend-screen opacity-60">
-    {/* Complex Wine Ring 1 - The main glass impression */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full"
-      style={{
-        background: 'radial-gradient(transparent 60%, rgba(89, 28, 53, 0.4) 65%, rgba(89, 28, 53, 0.9) 70%, transparent 72%)',
-        borderRadius: '52% 48% 62% 38% / 54% 60% 40% 46%',
-        filter: 'blur(1px)',
-        transform: 'rotate(15deg)'
-      }}></div>
-
-    {/* Darker edge pool for Ring 1 */}
-    <div className="absolute top-[55%] left-[60%] w-24 h-4 bg-[#591c35] rounded-full blur-[2px] opacity-80 rotate-45"></div>
-
-    {/* Complex Wine Ring 2 - Overlapping */}
-    <div className="absolute top-[45%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full"
-      style={{
-        background: 'radial-gradient(transparent 62%, rgba(89, 28, 53, 0.3) 66%, rgba(89, 28, 53, 0.8) 70%, transparent 73%)',
-        borderRadius: '40% 60% 50% 50% / 45% 55% 45% 55%',
-        filter: 'blur(0.5px)',
-        transform: 'translate(-20px, -20px) rotate(-10deg)'
-      }}></div>
-
-    {/* Splatters and Drips */}
-    <div className="absolute top-[30%] left-[30%] w-3 h-3 bg-[#591c35] rounded-full blur-[0.5px]"></div>
-    <div className="absolute top-[32%] left-[28%] w-1.5 h-1.5 bg-[#591c35] rounded-full opacity-70"></div>
-    <div className="absolute bottom-[35%] right-[35%] w-5 h-5 bg-[#591c35] rounded-full blur-[4px] opacity-60"></div>
-    <div className="absolute bottom-[38%] right-[32%] w-2 h-2 bg-[#591c35] rounded-full opacity-80"></div>
-
-    {/* Large fainter wash */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#591c35] opacity-10 rounded-full blur-3xl pointer-events-none"></div>
-  </div>
-);
-
-const VeneurMenu = () => (
-  <div className="absolute top-1/3 left-8 md:left-24 flex flex-col items-start gap-8 z-30">
-    <Link to="/menu" className="group flex items-center gap-3">
-      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300">MENU</span>
-    </Link>
-    <Link to="/menu" className="group flex items-center gap-3 ml-6">
-      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform -rotate-1">WIJN</span>
-    </Link>
-    <Link to="/vacatures" className="group flex items-center gap-3 ml-2">
-      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform rotate-1">VACATURES</span>
-    </Link>
-    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-cream text-2xl hover:text-brand-gold transition-colors mt-4 ml-8 opacity-80 hover:opacity-100">
-      <i className="fa-brands fa-instagram"></i>
-    </a>
-  </div>
-);
+import { WineStain } from '../components/WineStain';
 
 const HeroSection = () => (
   <section className="relative min-h-[90vh] w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6">
 
-    {/* Realistic Wine Glass Stains (Left) */}
-    <RealisticWineStains />
+    {/* Realistic SVG Wine Stains (Left) */}
+    <div className="absolute left-[5%] top-[45%] -translate-y-1/2 w-[700px] h-[700px] pointer-events-none select-none">
+      <WineStain className="w-[500px] h-[500px] top-0 left-0" color="#591c35" opacity={0.6} rotation={15} scale={1.2} />
+      <WineStain className="w-[400px] h-[400px] top-[100px] left-[100px]" color="#591c35" opacity={0.4} rotation={-20} scale={0.8} />
+      <WineStain className="w-[200px] h-[200px] top-[300px] left-[-50px]" color="#591c35" opacity={0.3} rotation={45} scale={1.5} />
 
-    {/* Veneur Style Menu (Left, Stacked) */}
-    <div className="hidden md:block">
-      <VeneurMenu />
+      {/* Splatters */}
+      <div className="absolute top-[20%] left-[40%] text-[#591c35] opacity-50 text-4xl blur-[1px]">•</div>
     </div>
 
-    {/* Centered Logo */}
-    <div className="z-20 flex flex-col items-center text-center">
-      <Logo className="w-[50vw] md:w-[280px] h-auto text-white brightness-200 drop-shadow-2xl opacity-95" />
-      <span className="font-display text-brand-gold/80 text-sm md:text-lg tracking-[0.6em] uppercase mt-6 ml-2">
-        Gastro Wijnbar
-      </span>
+const VeneurMenu = () => (
+    <div className="absolute top-1/3 left-8 md:left-24 flex flex-col items-start gap-8 z-30">
+      <Link to="/menu" className="group flex items-center gap-3">
+        <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300">MENU</span>
+      </Link>
+      <Link to="/menu" className="group flex items-center gap-3 ml-6">
+        <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform -rotate-1">WIJN</span>
+      </Link>
+      <Link to="/vacatures" className="group flex items-center gap-3 ml-2">
+        <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform rotate-1">VACATURES</span>
+      </Link>
+      <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-cream text-2xl hover:text-brand-gold transition-colors mt-4 ml-8 opacity-80 hover:opacity-100">
+        <i className="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+    );
 
-      {/* Reserve Button */}
-      <div className="mt-16">
-        <Link to="#reserve">
-          <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-white hover:text-brand-dark border-none py-3 px-10 text-base rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
-            Reserveren
-          </Button>
-        </Link>
+const HeroSection = () => (
+    <section className="relative min-h-[90vh] w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6">
+
+      {/* Realistic Wine Glass Stains (Left) */}
+      <RealisticWineStains />
+
+      {/* Veneur Style Menu (Left, Stacked) */}
+      <div className="hidden md:block">
+        <VeneurMenu />
       </div>
-    </div>
 
-    {/* Mobile Links (Bottom) */}
-    <div className="md:hidden absolute bottom-12 left-0 w-full flex justify-center gap-8 z-30 text-brand-cream/80">
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Menu</Link>
-      <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Wijn</Link>
-      <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Contact</Link>
-    </div>
-  </section>
-);
+      {/* Centered Logo */}
+      <div className="z-20 flex flex-col items-center text-center">
+        <Logo className="w-[50vw] md:w-[280px] h-auto text-white brightness-200 drop-shadow-2xl opacity-95" />
+        <span className="font-display text-brand-gold/80 text-sm md:text-lg tracking-[0.6em] uppercase mt-6 ml-2">
+          Gastro Wijnbar
+        </span>
+
+        {/* Reserve Button */}
+        <div className="mt-16">
+          <Link to="#reserve">
+            <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-white hover:text-brand-dark border-none py-3 px-10 text-base rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+              Reserveren
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Mobile Links (Bottom) */}
+      <div className="md:hidden absolute bottom-12 left-0 w-full flex justify-center gap-8 z-30 text-brand-cream/80">
+        <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Menu</Link>
+        <Link to="/menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Wijn</Link>
+        <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Contact</Link>
+      </div>
+    </section>
+    );
 
 const PhotoGrid = () => {
   const images = [
@@ -98,9 +78,9 @@ const PhotoGrid = () => {
     '/images/gallery-update-3.jpg',
     '/images/gallery-update-4.jpg',
     '/images/gallery-update-5.jpg',
-  ];
+    ];
 
-  return (
+    return (
     <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto bg-brand-cream">
       {/* Mobile Carousel */}
       <h2 className="md:hidden font-display text-3xl text-brand-green-dark mb-6 text-center">Sfeerimpressie</h2>
@@ -166,32 +146,32 @@ const PhotoGrid = () => {
 
       </div>
     </section>
-  );
+    );
 };
 
 const AboutSection = () => (
-  <section className="py-16 md:py-24 px-6 relative overflow-hidden bg-brand-beige">
-    {/* Decorative gradient blob */}
-    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-sand/50 to-transparent pointer-events-none"></div>
+    <section className="py-16 md:py-24 px-6 relative overflow-hidden bg-brand-beige">
+      {/* Decorative gradient blob */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-sand/50 to-transparent pointer-events-none"></div>
 
-    <div className="max-w-2xl mx-auto text-center relative z-10 glass p-8 rounded-none border border-brand-gold/10 shadow-xl backdrop-blur-sm">
-      <h2 className="font-display text-3xl md:text-4xl text-brand-green-dark mb-8 uppercase tracking-widest drop-shadow-sm">Over Clos</h2>
-      <p className="font-body text-xl md:text-2xl text-brand-grey leading-relaxed font-light italic">
-        “Clos is een wijnbar waar aandacht centraal staat. Voor het glas, het moment en de mensen aan tafel. Geen haast, alleen pure kwaliteit.”
-      </p>
-      <div className="mt-12 w-24 h-px bg-brand-gold mx-auto opacity-70"></div>
-    </div>
-  </section>
-);
+      <div className="max-w-2xl mx-auto text-center relative z-10 glass p-8 rounded-none border border-brand-gold/10 shadow-xl backdrop-blur-sm">
+        <h2 className="font-display text-3xl md:text-4xl text-brand-green-dark mb-8 uppercase tracking-widest drop-shadow-sm">Over Clos</h2>
+        <p className="font-body text-xl md:text-2xl text-brand-grey leading-relaxed font-light italic">
+          “Clos is een wijnbar waar aandacht centraal staat. Voor het glas, het moment en de mensen aan tafel. Geen haast, alleen pure kwaliteit.”
+        </p>
+        <div className="mt-12 w-24 h-px bg-brand-gold mx-auto opacity-70"></div>
+      </div>
+    </section>
+    );
 
 const QuickLinks = () => {
   const links = [
-    { title: 'Wijnkaart', img: '/images/link-wijnkaart.jpg', action: 'Bekijk', link: '/menu' },
-    { title: 'Menukaart', img: '/images/link-menukaart.png', action: 'Bekijk', link: '/menu' },
-    { title: 'Reserveren', img: '/images/link-reserveren.jpg', action: 'Boek nu', link: '#reserve' },
-  ];
+    {title: 'Wijnkaart', img: '/images/link-wijnkaart.jpg', action: 'Bekijk', link: '/menu' },
+    {title: 'Menukaart', img: '/images/link-menukaart.png', action: 'Bekijk', link: '/menu' },
+    {title: 'Reserveren', img: '/images/link-reserveren.jpg', action: 'Boek nu', link: '#reserve' },
+    ];
 
-  return (
+    return (
     <section className="py-12 md:py-24 px-4 bg-brand-sand">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {links.map((link) => (
@@ -212,7 +192,7 @@ const QuickLinks = () => {
         ))}
       </div>
     </section>
-  );
+    );
 };
 
 export const Home: React.FC = () => {
@@ -223,5 +203,5 @@ export const Home: React.FC = () => {
       <AboutSection />
       <QuickLinks />
     </div>
-  );
+    );
 };
