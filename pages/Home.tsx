@@ -5,10 +5,7 @@ import { Link } from 'react-router-dom';
 const HeroSection = () => (
   <section className="relative min-h-[90vh] w-full bg-[#1a0510] overflow-hidden flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
 
-    {/* Decorative Wine Stains (CSS Shapes) */}
-    <div className="absolute top-10 left-10 w-64 h-64 rounded-full border-[12px] border-[#4a1c2f]/40 blur-[2px] opacity-60 pointer-events-none mix-blend-screen animate-pulse-slow" style={{ borderRadius: '45% 55% 40% 60% / 50% 60% 30% 70%' }}></div>
-    <div className="absolute bottom-20 right-1/3 w-40 h-40 rounded-full border-[8px] border-[#4a1c2f]/30 blur-[1px] opacity-50 pointer-events-none mix-blend-screen" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
-    <div className="absolute -top-12 right-12 w-96 h-96 rounded-full bg-[#4a1c2f]/20 blur-3xl pointer-events-none"></div>
+
 
     {/* Large Background Typography */}
     <div className="absolute inset-0 flex flex-col items-center justify-center z-0 pointer-events-none select-none">
