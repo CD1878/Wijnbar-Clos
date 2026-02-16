@@ -262,12 +262,12 @@ export const Menu: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'wijn' | 'menu'>('wijn');
 
     return (
-        <div className="min-h-screen pt-20 bg-brand-cream fade-in">
+        <div className="min-h-screen pt-16 md:pt-20 bg-brand-cream fade-in">
             {/* Header */}
-            <div className="bg-brand-green-dark py-20 px-6 text-center relative overflow-hidden">
+            <div className="bg-brand-green-dark py-12 md:py-20 px-6 text-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 pattern-dots bg-repeat"></div>
-                <h1 className="font-display text-5xl md:text-7xl text-brand-cream uppercase tracking-widest relative z-10 drop-shadow-md">Onze Kaart</h1>
-                <p className="font-body text-brand-gold italic text-xl mt-4 relative z-10">Ontdek onze selectie</p>
+                <h1 className="font-display text-4xl md:text-7xl text-brand-cream uppercase tracking-widest relative z-10 drop-shadow-md">Onze Kaart</h1>
+                <p className="font-body text-brand-gold italic text-lg md:text-xl mt-3 md:mt-4 relative z-10">Ontdek onze selectie</p>
             </div>
 
             {/* Navigation Tabs */}
@@ -275,14 +275,14 @@ export const Menu: React.FC = () => {
                 <div className="max-w-4xl mx-auto flex justify-center">
                     <button
                         onClick={() => setActiveTab('wijn')}
-                        className={`px-8 py-6 font-display text-lg tracking-widest uppercase transition-all relative ${activeTab === 'wijn' ? 'text-brand-green-dark' : 'text-brand-grey/40 hover:text-brand-green-dark'}`}
+                        className={`px-6 py-4 md:px-8 md:py-6 font-display text-base md:text-lg tracking-widest uppercase transition-all relative ${activeTab === 'wijn' ? 'text-brand-green-dark' : 'text-brand-grey/40 hover:text-brand-green-dark'}`}
                     >
                         Wijnkaart
                         {activeTab === 'wijn' && <span className="absolute bottom-0 left-0 w-full h-1 bg-brand-gold"></span>}
                     </button>
                     <button
                         onClick={() => setActiveTab('menu')}
-                        className={`px-8 py-6 font-display text-lg tracking-widest uppercase transition-all relative ${activeTab === 'menu' ? 'text-brand-green-dark' : 'text-brand-grey/40 hover:text-brand-green-dark'}`}
+                        className={`px-6 py-4 md:px-8 md:py-6 font-display text-base md:text-lg tracking-widest uppercase transition-all relative ${activeTab === 'menu' ? 'text-brand-green-dark' : 'text-brand-grey/40 hover:text-brand-green-dark'}`}
                     >
                         Menukaart
                         {activeTab === 'menu' && <span className="absolute bottom-0 left-0 w-full h-1 bg-brand-gold"></span>}

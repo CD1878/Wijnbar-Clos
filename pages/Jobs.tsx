@@ -4,17 +4,17 @@ import { Input, TextArea } from '../components/FormElements';
 
 export const Jobs: React.FC = () => {
   return (
-    <div className="min-h-screen pt-32 pb-12 px-6 fade-in max-w-3xl mx-auto bg-brand-cream">
-      <header className="mb-16 text-center">
-        <h1 className="font-display text-4xl md:text-6xl text-brand-green-dark mb-6">Werken bij Clos</h1>
-        <p className="font-sans text-brand-grey max-w-xl mx-auto leading-relaxed font-light">
+    <div className="min-h-screen pt-24 md:pt-32 pb-12 px-6 fade-in max-w-3xl mx-auto bg-brand-cream">
+      <header className="mb-10 md:mb-16 text-center">
+        <h1 className="font-display text-3xl md:text-6xl text-brand-green-dark mb-4 md:mb-6">Werken bij Clos</h1>
+        <p className="font-sans text-brand-grey max-w-xl mx-auto leading-relaxed font-light text-sm md:text-base">
           We zoeken altijd naar mensen met passie voor gastvrijheid en wijn.
           Heb jij oog voor detail en maak je het mensen graag naar de zin?
         </p>
       </header>
 
-      <div className="bg-white p-8 md:p-12 border border-brand-sand/30 shadow-sm">
-        <form className="flex flex-col space-y-6">
+      <div className="bg-white p-6 md:p-12 border border-brand-sand/30 shadow-sm">
+        <form className="flex flex-col space-y-5 md:space-y-6">
           <Input label="Naam" id="name" type="text" />
           <Input label="Email" id="email" type="email" />
           <Input label="Telefoon" id="phone" type="tel" />
@@ -44,7 +44,7 @@ export const Jobs: React.FC = () => {
 
           <TextArea label="Motivatie" id="motivation" placeholder="Waarom wil je bij Clos werken?" />
 
-          <div className="flex flex-col mb-8">
+          <div className="flex flex-col mb-6 md:mb-8">
             <label className="mb-2 text-xs uppercase tracking-widest text-brand-grey/70 font-sans font-bold">CV Uploaden</label>
             <input type="file" className="block w-full text-sm text-brand-grey
               file:mr-4 file:py-2 file:px-4
