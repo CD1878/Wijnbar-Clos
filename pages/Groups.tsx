@@ -40,7 +40,7 @@ export const Groups: React.FC = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-stretch">
         <div className="relative h-[250px] md:h-auto rounded-none overflow-hidden group shadow-xl">
           <img
-            src="/images/groups-hero-2.jpg"
+            src="/images/462383100_558693689856482_9159173755871425933_n.jpg"
             alt="Groepsdiner bij Clos"
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
