@@ -11,6 +11,7 @@ const HeroSection = () => (
         alt="Sfeervolle wijnbar"
         className="w-full h-full object-cover"
       />
+      <div className="absolute inset-0 bg-black/60 md:bg-black/40"></div>
     </div>
 
     {/* Content */}
