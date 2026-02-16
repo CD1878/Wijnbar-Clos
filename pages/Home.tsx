@@ -3,41 +3,49 @@ import { Button } from '../components/Button';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] w-full bg-[#f4f1ea] overflow-hidden flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
+  <section className="relative min-h-[90vh] w-full bg-[#1a0510] overflow-hidden flex flex-col md:flex-row items-center justify-center p-6 md:p-12">
+
+    {/* Decorative Wine Stains (CSS Shapes) */}
+    <div className="absolute top-10 left-10 w-64 h-64 rounded-full border-[12px] border-[#4a1c2f]/40 blur-[2px] opacity-60 pointer-events-none mix-blend-screen animate-pulse-slow" style={{ borderRadius: '45% 55% 40% 60% / 50% 60% 30% 70%' }}></div>
+    <div className="absolute bottom-20 right-1/3 w-40 h-40 rounded-full border-[8px] border-[#4a1c2f]/30 blur-[1px] opacity-50 pointer-events-none mix-blend-screen" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
+    <div className="absolute -top-12 right-12 w-96 h-96 rounded-full bg-[#4a1c2f]/20 blur-3xl pointer-events-none"></div>
 
     {/* Large Background Typography */}
-    <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none select-none">
-      <h1 className="font-display text-[25vw] leading-none text-[#dcb880] opacity-30 mix-blend-multiply tracking-tighter">
+    <div className="absolute inset-0 flex flex-col items-center justify-center z-0 pointer-events-none select-none">
+      <h1 className="font-display text-[25vw] leading-none text-[#e8dcc5] opacity-10 tracking-tighter mix-blend-overlay">
         CLOS
       </h1>
+      <span className="font-display text-2xl md:text-5xl text-[#e8dcc5] opacity-30 tracking-[0.5em] uppercase mt-[-2vw] mix-blend-overlay">
+        Gastro Wijnbar
+      </span>
     </div>
 
     {/* Playful Floating Links (Desktop & Tablet) */}
-    <div className="absolute left-8 top-32 z-20 hidden md:flex flex-col gap-8 text-brand-dark">
+    <div className="absolute left-8 md:left-16 top-32 z-20 hidden md:flex flex-col gap-10 text-brand-cream">
       <Link to="/menu" className="group">
-        <span className="font-display text-xl md:text-2xl tracking-widest uppercase hover:text-brand-red transition-colors duration-300 block -rotate-6 group-hover:rotate-0 transform transition-transform">
+        <span className="font-display text-xl md:text-3xl tracking-widest uppercase hover:text-brand-gold transition-colors duration-300 block -rotate-6 group-hover:rotate-0 transform transition-transform drop-shadow-lg">
           Menu
         </span>
       </Link>
-      <Link to="/menu" className="group pl-12">
-        <span className="font-display text-xl md:text-2xl tracking-widest uppercase hover:text-brand-red transition-colors duration-300 block rotate-3 group-hover:rotate-0 transform transition-transform">
+      <Link to="/menu" className="group pl-16">
+        <span className="font-display text-xl md:text-3xl tracking-widest uppercase hover:text-brand-gold transition-colors duration-300 block rotate-6 group-hover:rotate-0 transform transition-transform drop-shadow-lg">
           Wijn
         </span>
       </Link>
       <Link to="/jobs" className="group">
-        <span className="font-display text-xl md:text-2xl tracking-widest uppercase hover:text-brand-red transition-colors duration-300 block -rotate-3 group-hover:rotate-0 transform transition-transform">
+        <span className="font-display text-xl md:text-3xl tracking-widest uppercase hover:text-brand-gold transition-colors duration-300 block -rotate-3 group-hover:rotate-0 transform transition-transform drop-shadow-lg">
           Vacatures
         </span>
       </Link>
-      <a href="https://instagram.com" target="_blank" rel="noreferrer" className="mt-8 text-2xl hover:text-brand-red transition-colors pl-6">
+      <a href="https://instagram.com" target="_blank" rel="noreferrer" className="mt-12 text-3xl hover:text-brand-gold transition-colors pl-8">
         <i className="fa-brands fa-instagram"></i>
       </a>
     </div>
 
     {/* Hero Image with Organic Shape */}
-    <div className="relative z-10 w-full max-w-[500px] md:max-w-[700px] aspect-[4/5] md:aspect-[5/4] animate-fade-in-up">
+    <div className="relative z-10 w-full max-w-[500px] md:max-w-[650px] aspect-[4/5] md:aspect-[5/4] animate-fade-in-up ml-auto md:mr-12">
       <div
-        className="w-full h-full overflow-hidden shadow-2xl transition-all duration-1000 hover:scale-[1.02]"
+        className="w-full h-full overflow-hidden shadow-2xl transition-all duration-1000 hover:scale-[1.02] border border-white/5"
         style={{
           borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
         }}
@@ -45,26 +53,26 @@ const HeroSection = () => (
         <img
           src="/images/hero-update.jpg"
           alt="Sfeervolle wijnbar"
-          className="w-full h-full object-cover scale-110"
+          className="w-full h-full object-cover scale-110 opacity-90 hover:opacity-100 transition-opacity duration-700"
         />
-        {/* Dark overlay for text contrast if needed, but here we want clarity */}
-        <div className="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
+        {/* Color wash overlay */}
+        <div className="absolute inset-0 bg-[#4a1c2f]/20 mix-blend-overlay"></div>
       </div>
 
       {/* Floating Badge */}
-      <div className="absolute -bottom-8 -right-4 md:right-12 z-30">
+      <div className="absolute -bottom-8 -left-4 md:-left-12 z-30">
         <Link to="#reserve">
-          <Button variant="primary" className="shadow-xl bg-brand-green-dark border-none hover:bg-brand-red py-4 px-8 text-lg rounded-full">
-            Reserveer een tafel
+          <Button variant="primary" className="shadow-2xl bg-brand-gold border-none text-brand-dark hover:bg-brand-cream py-4 px-10 text-xl rounded-full font-display tracking-wider">
+            Reserveren
           </Button>
         </Link>
       </div>
     </div>
 
     {/* Mobile Links (Bottom) */}
-    <div className="md:hidden absolute bottom-8 left-0 w-full flex justify-center gap-6 z-30">
-      <Link to="/menu" className="font-display text-brand-dark uppercase tracking-widest text-sm border-b border-brand-dark pb-1">Menu</Link>
-      <Link to="/menu" className="font-display text-brand-dark uppercase tracking-widest text-sm border-b border-brand-dark pb-1">Wijn</Link>
+    <div className="md:hidden absolute bottom-8 left-0 w-full flex justify-center gap-6 z-30 text-brand-cream">
+      <Link to="/menu" className="font-display uppercase tracking-widest text-sm border-b border-brand-cream/30 pb-1">Menu</Link>
+      <Link to="/menu" className="font-display uppercase tracking-widest text-sm border-b border-brand-cream/30 pb-1">Wijn</Link>
     </div>
   </section>
 );
