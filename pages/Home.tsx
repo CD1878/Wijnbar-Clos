@@ -58,6 +58,7 @@ const PhotoGrid = () => {
   return (
     <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto bg-brand-cream">
       {/* Mobile Carousel */}
+      <h2 className="md:hidden font-display text-3xl text-brand-green-dark mb-6 text-center">Sfeerimpressie</h2>
       <div className="md:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory -mx-4 px-4 pb-4 no-scrollbar">
         {images.map((img, index) => (
           <div key={index} className="flex-none w-[85vw] h-[400px] snap-center relative border border-brand-gold/20">
