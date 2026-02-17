@@ -13,7 +13,7 @@ interface PageProps {
 
 const Page = forwardRef<HTMLDivElement, PageProps>((props, ref) => {
     return (
-        <div className={`demoPage bg-white shadow-lg p-8 md:p-12 border border-gray-100 flex flex-col h-full ${props.className}`} ref={ref}>
+        <div className={`demoPage bg-white shadow-lg p-6 md:p-12 border border-gray-100 flex flex-col h-full ${props.className}`} ref={ref}>
             <div className="flex-grow">
                 {props.children}
             </div>
@@ -43,7 +43,7 @@ export const WineFlipbook: React.FC = () => {
             {/* @ts-ignore */}
             <HTMLFlipBook
                 width={isMobile ? 320 : 450}
-                height={isMobile ? 500 : 650}
+                height={isMobile ? 600 : 650}
                 size="stretch"
                 minWidth={300}
                 maxWidth={isMobile ? 400 : 500}
@@ -72,7 +72,8 @@ export const WineFlipbook: React.FC = () => {
                 {/* Content Pages */}
                 {wineData.flatMap((category) => {
                     // Split wines into chunks of ~5-6 items per page to fit comfortably
-                    const itemsPerPage = 5;
+                    // Reduce items per page on mobile to prevent overflow
+                    const itemsPerPage = isMobile ? 4 : 5;
                     const chunks = [];
                     for (let i = 0; i < category.wines.length; i += itemsPerPage) {
                         chunks.push(category.wines.slice(i, i + itemsPerPage));
