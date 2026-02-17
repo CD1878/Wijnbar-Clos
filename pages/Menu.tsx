@@ -303,7 +303,7 @@ export const Menu: React.FC = () => {
                 </div>
             </div>
 
-            <div className="max-w-4xl mx-auto px-6 py-16">
+            <div className="max-w-7xl mx-auto px-6 py-16">
                 {activeTab === 'wijn' ? (
                     <div className="animate-fade-in w-full">
                         <WineFlipbook />

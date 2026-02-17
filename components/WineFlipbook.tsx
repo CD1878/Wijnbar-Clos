@@ -28,7 +28,20 @@ export const WineFlipbook: React.FC = () => {
     return (
         <div className="w-full flex justify-center py-12 bg-brand-sand/10">
             {/* @ts-ignore */}
-            <HTMLFlipBook width={500} height={700} showCover={true} className="shadow-2xl">
+            <HTMLFlipBook
+                width={450}
+                height={650}
+                size="stretch"
+                minWidth={300}
+                maxWidth={500}
+                minHeight={400}
+                maxHeight={700}
+                maxShadowOpacity={0.5}
+                showCover={true}
+                mobileScrollSupport={true}
+                usePortrait={false}
+                className="shadow-2xl"
+            >
                 {/* Cover */}
                 <Page className="bg-[#fafaf9]">
                     <div className="h-full flex flex-col items-center justify-center border-4 border-double border-brand-green-dark/20 m-4">
