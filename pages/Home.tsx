@@ -69,20 +69,7 @@ const HeroSection = () => (
 
 
 
-const AboutSection = () => (
-  <section className="py-16 md:py-24 px-6 relative overflow-hidden bg-brand-beige">
-    {/* Decorative gradient blob */}
-    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-sand/50 to-transparent pointer-events-none"></div>
 
-    <div className="max-w-2xl mx-auto text-center relative z-10 glass p-8 rounded-none border border-brand-gold/10 shadow-xl backdrop-blur-sm">
-      <h2 className="font-display text-3xl md:text-4xl text-brand-green-dark mb-8 uppercase tracking-widest drop-shadow-sm">Over Clos</h2>
-      <p className="font-body text-xl md:text-2xl text-brand-grey leading-relaxed font-light italic">
-        “Clos is een wijnbar waar aandacht centraal staat. Voor het glas, het moment en de mensen aan tafel. Geen haast, alleen pure kwaliteit.”
-      </p>
-      <div className="mt-12 w-24 h-px bg-brand-gold mx-auto opacity-70"></div>
-    </div>
-  </section>
-);
 
 
 
@@ -91,7 +78,7 @@ export const Home: React.FC = () => {
     <div className="fade-in">
       <HeroSection />
 
-      <AboutSection />
+
 
     </div>
   );
