@@ -84,36 +84,7 @@ const AboutSection = () => (
   </section>
 );
 
-const QuickLinks = () => {
-  const links = [
-    { title: 'Wijnkaart', img: '/images/link-wijnkaart.jpg', action: 'Bekijk', link: '/menu' },
-    { title: 'Menukaart', img: '/images/link-menukaart.png', action: 'Bekijk', link: '/menu' },
-    { title: 'Reserveren', img: '/images/link-reserveren.jpg', action: 'Boek nu', link: '#reserve' },
-  ];
 
-  return (
-    <section className="py-12 md:py-24 px-4 bg-brand-sand">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        {links.map((link) => (
-          <Link to={link.link} key={link.title} className="relative group cursor-pointer h-[300px] overflow-hidden border border-brand-green-dark/10 hover:border-brand-gold/40 transition-colors shadow-sm hover:shadow-xl">
-            <img
-              src={link.img}
-              alt={link.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 transition-all"
-            />
-            {/* Overlay: Subtle dark overlay as requested */}
-            <div className="absolute inset-0 bg-[rgba(20,20,20,0.35)] transition-all duration-500 flex flex-col items-center justify-center">
-              <h3 className="font-display text-3xl mb-4 tracking-widest drop-shadow-md text-brand-cream transition-colors duration-500 transform group-hover:-translate-y-2">{link.title}</h3>
-              <span className="font-body text-xs uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 border border-brand-cream text-brand-cream px-6 py-3 hover:bg-brand-cream hover:text-brand-dark">
-                {link.action}
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
 
 export const Home: React.FC = () => {
   return (
@@ -121,7 +92,7 @@ export const Home: React.FC = () => {
       <HeroSection />
 
       <AboutSection />
-      <QuickLinks />
+
     </div>
   );
 };
