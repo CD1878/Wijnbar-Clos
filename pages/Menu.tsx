@@ -306,7 +306,43 @@ export const Menu: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 py-16">
                 {activeTab === 'wijn' ? (
                     <div className="animate-fade-in w-full">
-                        <WineFlipbook />
+                        {/* Desktop: Flipbook */}
+                        <div className="hidden md:block">
+                            <WineFlipbook />
+                        </div>
+
+                        {/* Mobile: Vertical List */}
+                        <div className="md:hidden space-y-12">
+                            {wineData.map((category, index) => (
+                                <div key={index} className="space-y-6">
+                                    <h3 className="font-display text-2xl text-brand-green-dark uppercase tracking-widest text-center border-b border-brand-gold/30 pb-3">
+                                        {category.title}
+                                    </h3>
+                                    <div className="space-y-6">
+                                        {category.wines.map((wine, wIndex) => (
+                                            <div key={wIndex} className="flex flex-col gap-1 pb-4 border-b border-brand-sand/20 last:border-0">
+                                                <div className="flex justify-between items-baseline">
+                                                    <h4 className="font-display text-lg text-brand-green-dark leading-tight">{wine.name}</h4>
+                                                    <div className="flex gap-3 text-sm font-bold text-brand-green-dark whitespace-nowrap ml-4">
+                                                        {typeof wine.priceGlass === 'string' ? (
+                                                            <span>{wine.priceGlass}</span>
+                                                        ) : (
+                                                            typeof wine.priceGlass === 'number' && wine.priceGlass > 0 && <span>€{wine.priceGlass.toFixed(1)}</span>
+                                                        )}
+                                                        {typeof wine.priceGlass === 'number' && wine.priceGlass > 0 && <span className="text-brand-gold/50">|</span>}
+                                                        <span>€{wine.priceBottle.toFixed(1)}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex justify-between items-center text-xs text-brand-grey/70 italic font-body">
+                                                    <span>{wine.grapes}</span>
+                                                    {wine.vintage && <span>{wine.vintage}</span>}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 ) : (
                     <div className="animate-fade-in space-y-20">
