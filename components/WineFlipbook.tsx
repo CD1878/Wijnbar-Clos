@@ -1,7 +1,9 @@
 import React, { forwardRef } from 'react';
 // @ts-ignore
+// @ts-ignore
 import HTMLFlipBook from 'react-pageflip';
 import { wineData } from '../pages/Menu';
+import { useState, useEffect } from 'react';
 
 interface PageProps {
     children: React.ReactNode;
@@ -25,21 +27,32 @@ const Page = forwardRef<HTMLDivElement, PageProps>((props, ref) => {
 });
 
 export const WineFlipbook: React.FC = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className="w-full flex justify-center py-12 bg-brand-sand/10">
             {/* @ts-ignore */}
             <HTMLFlipBook
-                width={450}
-                height={650}
+                width={isMobile ? 320 : 450}
+                height={isMobile ? 500 : 650}
                 size="stretch"
                 minWidth={300}
-                maxWidth={500}
+                maxWidth={isMobile ? 400 : 500}
                 minHeight={400}
                 maxHeight={700}
                 maxShadowOpacity={0.5}
                 showCover={true}
                 mobileScrollSupport={true}
-                usePortrait={false}
+                usePortrait={isMobile}
                 className="shadow-2xl"
             >
                 {/* Cover */}

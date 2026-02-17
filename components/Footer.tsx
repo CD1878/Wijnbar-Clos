@@ -4,7 +4,7 @@ import { Button } from './Button';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#744365] py-12 md:py-16 px-6 border-t border-brand-gold/20">
+    <footer className="py-12 md:py-16 px-6 border-t border-brand-gold/20" style={{ backgroundColor: '#744365' }}>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
 
         {/* Address */}
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
           <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="text-brand-cream hover:text-brand-gold transition-colors">
             <Instagram size={24} strokeWidth={1.5} />
           </a>
-          <Button variant="outline" className="min-w-[160px] border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-green-dark">
+          <Button className="min-w-[160px] bg-brand-gold text-brand-green-dark hover:bg-brand-gold/90 border-none">
             Reserveer Tafel
           </Button>
         </div>
