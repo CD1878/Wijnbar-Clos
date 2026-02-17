@@ -28,51 +28,53 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBackground} px-6 py-4 flex items-center justify-between`}>
-        {/* Mobile: Hamburger (Hidden on Desktop) */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden p-2 -ml-2 hover:opacity-70 transition-opacity focus:outline-none"
-          aria-label="Menu"
-        >
-          {isOpen ? <X size={28} className="text-brand-gold" /> : <Menu size={28} className="text-brand-cream" />}
-        </button>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBackground} px-6 py-4 flex justify-center`}>
+        <div className="w-full max-w-7xl flex items-center justify-between relative">
+          {/* Mobile: Hamburger (Hidden on Desktop) */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 -ml-2 hover:opacity-70 transition-opacity focus:outline-none"
+            aria-label="Menu"
+          >
+            {isOpen ? <X size={28} className="text-brand-gold" /> : <Menu size={28} className="text-brand-cream" />}
+          </button>
 
-        {/* Desktop Left Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <Link to="/groepen" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Groepen</Link>
-          <Link to="/wijnproeven" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Wijnproeven</Link>
-          <Link to="/vacatures" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Vacatures</Link>
-        </div>
+          {/* Desktop Left Nav */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <Link to="/menu?tab=menu" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Menu</Link>
+            <Link to="/menu?tab=wijn" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Wijn</Link>
+            <Link to="/groepen" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Groepen</Link>
+            <Link to="/wijnproeven" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Wijnproeven</Link>
+          </div>
 
-        {/* Center: Logo */}
-        <Link to="/" className={`absolute left-1/2 transform -translate-x-1/2`}>
-          <Logo className={`h-10 md:h-12 w-auto transition-colors duration-300 ${isOpen ? 'text-brand-green-dark' : logoColor}`} />
-        </Link>
+          {/* Center: Logo */}
+          <Link to="/" className={`absolute left-1/2 transform -translate-x-1/2`}>
+            <Logo className={`h-10 md:h-12 w-auto transition-colors duration-300 ${isOpen ? 'text-brand-green-dark' : logoColor}`} />
+          </Link>
 
-        {/* Desktop Right Nav & Reserve */}
-        <div className="hidden md:flex items-center gap-8">
-          <Link to="/menu?tab=menu" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Menu</Link>
-          <Link to="/menu?tab=wijn" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Wijn</Link>
-          <Link to="/contact" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Contact</Link>
-          <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="text-brand-cream hover:text-brand-gold transition-colors">
-            <Instagram size={20} strokeWidth={1.5} />
-          </a>
+          {/* Desktop Right Nav & Reserve */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <Link to="/vacatures" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Vacatures</Link>
+            <Link to="/contact" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Contact</Link>
+            <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="text-brand-cream hover:text-brand-gold transition-colors">
+              <Instagram size={20} strokeWidth={1.5} />
+            </a>
+            <a
+              href="#reserve"
+              className="px-6 py-2 border transition-all duration-300 text-xs tracking-[0.2em] uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark"
+            >
+              Reserveren
+            </a>
+          </div>
+
+          {/* Mobile Reserve (Visible only on Mobile if needed, but usually we hide it in favor of hamburger or keep it small) */}
           <a
             href="#reserve"
-            className="px-6 py-2 border transition-all duration-300 text-xs tracking-[0.2em] uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark"
+            className="md:hidden px-4 py-2 border transition-all duration-300 text-[10px] tracking-widest uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark"
           >
             Reserveren
           </a>
         </div>
-
-        {/* Mobile Reserve (Visible only on Mobile if needed, but usually we hide it in favor of hamburger or keep it small) */}
-        <a
-          href="#reserve"
-          className="md:hidden px-4 py-2 border transition-all duration-300 text-[10px] tracking-widest uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark"
-        >
-          Reserveren
-        </a>
       </nav>
 
       {/* Fullscreen Overlay Menu */}

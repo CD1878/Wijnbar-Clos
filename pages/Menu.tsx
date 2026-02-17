@@ -15,7 +15,7 @@ type WineCategory = {
     wines: Wine[];
 };
 
-const wineData: WineCategory[] = [
+export const wineData: WineCategory[] = [
     {
         title: "Mousserend",
         wines: [
@@ -155,13 +155,13 @@ const wineData: WineCategory[] = [
     }
 ];
 
-type FoodItem = {
+export type FoodItem = {
     name: string;
     description?: string;
     price: number;
 };
 
-type FoodCategory = {
+export type FoodCategory = {
     title: string;
     description?: string;
     items: FoodItem[];
@@ -259,6 +259,7 @@ const FoodItemRow = ({ item }: { item: FoodItem }) => (
 );
 
 import { useSearchParams } from 'react-router-dom';
+import { WineFlipbook } from '../components/WineFlipbook';
 
 export const Menu: React.FC = () => {
     const [searchParams] = useSearchParams();
@@ -304,17 +305,8 @@ export const Menu: React.FC = () => {
 
             <div className="max-w-4xl mx-auto px-6 py-16">
                 {activeTab === 'wijn' ? (
-                    <div className="animate-fade-in space-y-16">
-                        {wineData.map((category, index) => (
-                            <div key={index}>
-                                <h3 className="font-display text-3xl text-brand-gold mb-8 text-center uppercase tracking-[0.2em] border-b-2 border-brand-gold/20 pb-4 inline-block w-full">{category.title}</h3>
-                                <div className="grid grid-cols-1 gap-2">
-                                    {category.wines.map((wine, wIndex) => (
-                                        <WineItem key={wIndex} wine={wine} />
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
+                    <div className="animate-fade-in w-full">
+                        <WineFlipbook />
                     </div>
                 ) : (
                     <div className="animate-fade-in space-y-20">
@@ -331,7 +323,7 @@ export const Menu: React.FC = () => {
                             <div key={index} className="flex flex-col md:flex-row gap-8 md:gap-16">
                                 {/* Left Column: Vertical Title */}
                                 <div className="md:w-1/4 flex md:justify-end">
-                                    <h3 className="font-display text-2xl md:text-3xl text-brand-green-dark uppercase tracking-[0.3em] md:[writing-mode:vertical-rl] md:[text-orientation:upright] text-center md:text-right border-l-0 md:border-l-2 border-brand-gold/30 pl-0 md:pl-4 py-2">
+                                    <h3 className="font-display text-2xl md:text-3xl text-brand-green-dark uppercase tracking-[0.3em] text-center md:text-right border-b-2 md:border-b-0 md:border-r-2 border-brand-gold/30 pb-2 md:pb-0 md:pr-4">
                                         {/* Auto-shorten specific titles for the aesthetic if needed, or use full title */}
                                         {category.title === "Voorgerechten" ? "VOOR" :
                                             category.title === "Hoofdgerechten" ? "HOOFD" :
