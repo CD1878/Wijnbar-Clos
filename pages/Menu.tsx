@@ -204,7 +204,7 @@ const foodData: FoodCategory[] = [
         items: [
             { name: "Kabeljauw", description: "gestoofde prei, Hollandaise van zuurkool", price: 28 },
             { name: "Wilde paddenstoelen", description: "schorseneren, Belper Knolle, saus van gepofte knoflook", price: 26 },
-            { name: "Kalfssukade", description: "gekarameliseerde sjalot, knolselderij créme, jus de veau", price: 28 },
+            { name: "Kalfssukade", description: "gekarameliseerde sjalot , knolselderij créme, jus de veau", price: 28 },
         ]
     },
     {
@@ -331,7 +331,7 @@ export const Menu: React.FC = () => {
                             <div key={index} className="flex flex-col md:flex-row gap-8 md:gap-16">
                                 {/* Left Column: Vertical Title */}
                                 <div className="md:w-1/4 flex md:justify-end">
-                                    <h3 className="font-display text-2xl md:text-3xl text-brand-green-dark uppercase tracking-[0.3em] writing-mode-vertical md:rotate-180 md:writing-mode-vertical-rl text-center md:text-right border-l-0 md:border-l-2 border-brand-gold/30 pl-0 md:pl-4 py-2">
+                                    <h3 className="font-display text-2xl md:text-3xl text-brand-green-dark uppercase tracking-[0.3em] md:[writing-mode:vertical-rl] md:[text-orientation:upright] text-center md:text-right border-l-0 md:border-l-2 border-brand-gold/30 pl-0 md:pl-4 py-2">
                                         {/* Auto-shorten specific titles for the aesthetic if needed, or use full title */}
                                         {category.title === "Voorgerechten" ? "VOOR" :
                                             category.title === "Hoofdgerechten" ? "HOOFD" :
