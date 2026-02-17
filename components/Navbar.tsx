@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
 
@@ -55,6 +55,9 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <Link to="/menu?tab=menu" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Menu</Link>
           <Link to="/menu?tab=wijn" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Wijn</Link>
           <Link to="/contact" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Contact</Link>
+          <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="text-brand-cream hover:text-brand-gold transition-colors">
+            <Instagram size={20} strokeWidth={1.5} />
+          </a>
           <a
             href="#reserve"
             className="px-6 py-2 border transition-all duration-300 text-xs tracking-[0.2em] uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark"

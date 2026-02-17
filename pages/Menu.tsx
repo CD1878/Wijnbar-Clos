@@ -317,24 +317,54 @@ export const Menu: React.FC = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className="animate-fade-in space-y-12">
+                    <div className="animate-fade-in space-y-20">
 
-                        <div className="glass p-8 border border-brand-gold/20 bg-brand-gold/5 mb-12 text-center rounded-xl">
-                            <h3 className="font-display text-3xl text-brand-green-dark mb-4 uppercase tracking-widest">Diner</h3>
-                            <p className="font-body text-lg text-brand-grey/90 leading-relaxed max-w-2xl mx-auto">
-                                Net als bij wijn vinden we het belangrijk om nieuwe smaken te ontdekken en te blijven experimenteren. In het restaurant word je meegenomen door onze chef en zijn team met originele gerechten die geweldig zijn om te combineren met wijn. Het steeds wisselende menu is geïnspireerd op de wijngebieden van onze wijnboeren, en uitgevoerd met een geheel eigen stijl.
+                        {/* Intro / Chef's Note (Optional, keeping it if desired or removing for pure minimalism) */}
+                        <div className="glass p-8 border border-brand-gold/20 bg-brand-gold/5 mb-16 text-center rounded-sm max-w-3xl mx-auto">
+                            <h3 className="font-display text-2xl text-brand-green-dark mb-4 uppercase tracking-[0.2em]">Diner</h3>
+                            <p className="font-body text-brand-grey/90 leading-relaxed italic font-light">
+                                "Net als bij wijn vinden we het belangrijk om nieuwe smaken te ontdekken. Het steeds wisselende menu is geïnspireerd op de wijngebieden van onze wijnboeren."
                             </p>
                         </div>
 
                         {foodData.map((category, index) => (
-                            <div key={index}>
-                                <h3 className="font-display text-3xl text-brand-gold mb-2 text-center uppercase tracking-[0.2em]">{category.title}</h3>
-                                {category.description && <p className="font-body text-brand-grey/60 text-center italic mb-8">{category.description}</p>}
-                                {!category.description && <div className="h-8"></div>}
+                            <div key={index} className="flex flex-col md:flex-row gap-8 md:gap-16">
+                                {/* Left Column: Vertical Title */}
+                                <div className="md:w-1/4 flex md:justify-end">
+                                    <h3 className="font-display text-2xl md:text-3xl text-brand-green-dark uppercase tracking-[0.3em] writing-mode-vertical md:rotate-180 md:writing-mode-vertical-rl text-center md:text-right border-l-0 md:border-l-2 border-brand-gold/30 pl-0 md:pl-4 py-2">
+                                        {/* Auto-shorten specific titles for the aesthetic if needed, or use full title */}
+                                        {category.title === "Voorgerechten" ? "VOOR" :
+                                            category.title === "Hoofdgerechten" ? "HOOFD" :
+                                                category.title === "Bijgerechten" ? "ERBIJ" :
+                                                    category.title === "Tussengerechten" ? "TUSSEN" :
+                                                        category.title === "Dessert" ? "NA" :
+                                                            category.title.toUpperCase()}
+                                    </h3>
+                                </div>
 
-                                <div className="grid grid-cols-1 gap-1">
+                                {/* Right Column: Items */}
+                                <div className="md:w-3/4 flex flex-col gap-6 pt-2">
                                     {category.items.map((item, iIndex) => (
-                                        <FoodItemRow key={iIndex} item={item} />
+                                        <div key={iIndex} className="group cursor-default">
+                                            <div className="flex justify-between items-baseline border-b border-brand-sand/30 pb-3">
+                                                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 max-w-[90%]">
+                                                    <h4 className="font-display text-lg md:text-xl text-brand-green-dark font-bold tracking-wide group-hover:text-brand-gold transition-colors">
+                                                        {item.name}
+                                                    </h4>
+                                                    {item.description && (
+                                                        <span className="hidden md:inline text-brand-gold/50">•</span>
+                                                    )}
+                                                    {item.description && (
+                                                        <p className="font-body text-brand-grey/70 italic text-sm md:text-base font-light">
+                                                            {item.description}
+                                                        </p>
+                                                    )}
+                                                </div>
+                                                <div className="font-display text-lg text-brand-green-dark font-medium whitespace-nowrap ml-4">
+                                                    {item.price % 1 === 0 ? item.price : item.price.toFixed(1)}
+                                                </div>
+                                            </div>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
