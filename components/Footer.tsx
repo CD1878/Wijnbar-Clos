@@ -4,7 +4,7 @@ import { Button } from './Button';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#744365] py-12 md:py-16 px-6 border-t border-brand-gold/20">
+    <footer className="bg-[#0b373e] py-12 md:py-16 px-6 border-t border-brand-gold/20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
 
         {/* Address */}

@@ -57,38 +57,47 @@ export const WineFlipbook: React.FC = () => {
                 </Page>
 
                 {/* Content Pages */}
-                {wineData.map((category, index) => (
-                    <Page key={index} number={index + 1}>
-                        <div className="h-full flex flex-col">
-                            <h3 className="font-display text-2xl text-brand-green-dark mb-6 uppercase tracking-widest text-center border-b border-brand-gold/30 pb-4">
-                                {category.title}
-                            </h3>
-                            <div className="space-y-4 overflow-y-auto pr-2 custom-scrollbar">
-                                {category.wines.map((wine, wIndex) => (
-                                    <div key={wIndex} className="mb-4 pb-4 border-b border-dashed border-gray-200 last:border-0">
-                                        <div className="flex justify-between items-baseline mb-1">
-                                            <h4 className="font-display text-base font-bold text-brand-green-dark">{wine.name}</h4>
-                                            <span className="font-body text-xs font-bold text-brand-green-dark space-x-2">
-                                                {/* Conditional formatting for glass/bottle prices */}
-                                                {typeof wine.priceGlass === 'string' ? (
-                                                    <span>{wine.priceGlass}</span>
-                                                ) : (
-                                                    wine.priceGlass > 0 && <span>€{wine.priceGlass.toFixed(1)}</span>
-                                                )}
-                                                {typeof wine.priceGlass === 'number' && wine.priceGlass > 0 && <span className="text-gray-300">|</span>}
-                                                <span>€{wine.priceBottle.toFixed(1)}</span>
-                                            </span>
+                {wineData.flatMap((category) => {
+                    // Split wines into chunks of ~5-6 items per page to fit comfortably
+                    const itemsPerPage = 5;
+                    const chunks = [];
+                    for (let i = 0; i < category.wines.length; i += itemsPerPage) {
+                        chunks.push(category.wines.slice(i, i + itemsPerPage));
+                    }
+
+                    return chunks.map((chunk, chunkIndex) => (
+                        <Page key={`${category.title}-${chunkIndex}`}>
+                            <div className="h-full flex flex-col">
+                                <h3 className="font-display text-2xl text-brand-green-dark mb-6 uppercase tracking-widest text-center border-b border-brand-gold/30 pb-4">
+                                    {category.title} {chunks.length > 1 && <span className="text-sm align-middle opacity-50">({chunkIndex + 1}/{chunks.length})</span>}
+                                </h3>
+                                <div className="space-y-4 pr-2 custom-scrollbar flex-grow">
+                                    {chunk.map((wine, wIndex) => (
+                                        <div key={wIndex} className="mb-4 pb-4 border-b border-dashed border-gray-200 last:border-0 last:pb-0 last:mb-0">
+                                            <div className="flex justify-between items-baseline mb-1">
+                                                <h4 className="font-display text-base font-bold text-brand-green-dark">{wine.name}</h4>
+                                                <span className="font-body text-xs font-bold text-brand-green-dark space-x-2 whitespace-nowrap ml-2">
+                                                    {/* Conditional formatting for glass/bottle prices */}
+                                                    {typeof wine.priceGlass === 'string' ? (
+                                                        <span>{wine.priceGlass}</span>
+                                                    ) : (
+                                                        wine.priceGlass > 0 && <span>€{wine.priceGlass.toFixed(1)}</span>
+                                                    )}
+                                                    {typeof wine.priceGlass === 'number' && wine.priceGlass > 0 && <span className="text-gray-300">|</span>}
+                                                    <span>€{wine.priceBottle.toFixed(1)}</span>
+                                                </span>
+                                            </div>
+                                            <div className="flex justify-between items-start text-xs text-brand-grey/70 italic font-body">
+                                                <span>{wine.grapes}</span>
+                                                {wine.vintage && <span className="ml-2">{wine.vintage}</span>}
+                                            </div>
                                         </div>
-                                        <div className="flex justify-between items-start text-xs text-brand-grey/70 italic font-body">
-                                            <span>{wine.grapes}</span>
-                                            {wine.vintage && <span>{wine.vintage}</span>}
-                                        </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    </Page>
-                ))}
+                        </Page>
+                    ));
+                })}
 
                 {/* Back Cover */}
                 <Page className="bg-[#fafaf9]">
