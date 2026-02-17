@@ -40,9 +40,9 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
         {/* Desktop Left Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/groepen" className="text-xs font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Groepen</Link>
-          <Link to="/wijnproeven" className="text-xs font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Wijnproeven</Link>
-          <Link to="/vacatures" className="text-xs font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Vacatures</Link>
+          <Link to="/groepen" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Groepen</Link>
+          <Link to="/wijnproeven" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Wijnproeven</Link>
+          <Link to="/vacatures" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Vacatures</Link>
         </div>
 
         {/* Center: Logo */}
@@ -52,12 +52,12 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
         {/* Desktop Right Nav & Reserve */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/menu?tab=menu" className="text-xs font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Menu</Link>
-          <Link to="/menu?tab=wijn" className="text-xs font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Wijn</Link>
-          <Link to="/contact" className="text-xs font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Contact</Link>
+          <Link to="/menu?tab=menu" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Menu</Link>
+          <Link to="/menu?tab=wijn" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Wijn</Link>
+          <Link to="/contact" className="text-xs font-bold uppercase tracking-[0.2em] hover:text-brand-gold transition-colors">Contact</Link>
           <a
             href="#reserve"
-            className="px-6 py-2 border transition-all duration-300 text-xs tracking-widest uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark"
+            className="px-6 py-2 border transition-all duration-300 text-xs tracking-[0.2em] uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-brand-green-dark"
           >
             Reserveren
           </a>
