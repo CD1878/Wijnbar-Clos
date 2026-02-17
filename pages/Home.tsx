@@ -4,22 +4,7 @@ import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
 import { WineStain } from '../components/WineStain';
 
-const VeneurMenu = () => (
-  <div className="absolute top-1/3 left-8 md:left-24 flex flex-col items-start gap-8 z-30">
-    <Link to="/menu?tab=menu" className="group flex items-center gap-3">
-      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300">MENU</span>
-    </Link>
-    <Link to="/menu?tab=wijn" className="group flex items-center gap-3 ml-6">
-      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform -rotate-1">WIJN</span>
-    </Link>
-    <Link to="/vacatures" className="group flex items-center gap-3 ml-2">
-      <span className="font-display text-brand-cream text-lg md:text-2xl tracking-[0.2em] group-hover:text-brand-gold transition-colors duration-300 transform rotate-1">VACATURES</span>
-    </Link>
-    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-brand-cream text-2xl hover:text-brand-gold transition-colors mt-4 ml-8 opacity-80 hover:opacity-100">
-      <i className="fa-brands fa-instagram"></i>
-    </a>
-  </div>
-);
+
 
 const HeroSection = () => (
   <section className="relative min-h-[90vh] w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6">
@@ -36,10 +21,7 @@ const HeroSection = () => (
       <div className="absolute bottom-[30%] right-[40%] text-[#591c35] opacity-60 text-2xl">•</div>
     </div>
 
-    {/* Veneur Style Menu (Left, Stacked) */}
-    <div className="hidden md:block">
-      <VeneurMenu />
-    </div>
+
 
     {/* Centered Logo */}
     <div className="z-20 flex flex-col items-center text-center">
