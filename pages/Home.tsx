@@ -67,83 +67,7 @@ const HeroSection = () => (
   </section>
 );
 
-const PhotoGrid = () => {
-  const images = [
-    '/images/gallery-update.jpg',
-    '/images/gallery-update-2.jpg',
-    '/images/gallery-update-3.jpg',
-    '/images/gallery-update-4.jpg',
-    '/images/gallery-update-5.jpg',
-  ];
 
-  return (
-    <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto bg-brand-cream">
-      {/* Mobile Carousel */}
-      <h2 className="md:hidden font-display text-3xl text-brand-green-dark mb-6 text-center">Sfeerimpressie</h2>
-      <div className="md:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory -mx-4 px-4 pb-4 no-scrollbar">
-        {images.map((img, index) => (
-          <div key={index} className="flex-none w-[85vw] h-[400px] snap-center relative border border-brand-gold/20">
-            <img
-              src={img}
-              alt={`Sfeerbeeld ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop Grid */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 h-auto">
-
-        {/* Col 1 */}
-        <div className="flex flex-col gap-4 md:gap-6">
-          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-            <img
-              src="/images/gallery-update.jpg"
-              alt="Sfeerbeeld 1"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-            />
-          </div>
-          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-            <img
-              src="/images/gallery-update-2.jpg"
-              alt="Sfeerbeeld 2"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-            />
-          </div>
-        </div>
-
-        {/* Col 2 (Tall/Center) */}
-        <div className="group overflow-hidden relative h-[400px] md:h-auto border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-          <img
-            src="/images/gallery-update-5.jpg"
-            alt="Sfeerbeeld 5"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-          />
-        </div>
-
-        {/* Col 3 */}
-        <div className="flex flex-col gap-4 md:gap-6">
-          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-            <img
-              src="/images/gallery-update-3.jpg"
-              alt="Sfeerbeeld 3"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-            />
-          </div>
-          <div className="group overflow-hidden relative h-[300px] border border-brand-gold/20 hover:border-brand-gold/50 transition-colors">
-            <img
-              src="/images/gallery-update-4.jpg"
-              alt="Sfeerbeeld 4"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-            />
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-};
 
 const AboutSection = () => (
   <section className="py-16 md:py-24 px-6 relative overflow-hidden bg-brand-beige">
@@ -195,7 +119,7 @@ export const Home: React.FC = () => {
   return (
     <div className="fade-in">
       <HeroSection />
-      <PhotoGrid />
+
       <AboutSection />
       <QuickLinks />
     </div>
