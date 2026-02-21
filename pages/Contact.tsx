@@ -113,9 +113,9 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Google Maps Section */}
-            <section className="w-full h-[300px] border-t border-brand-contrast/20 grayscale hover:grayscale-0 transition-all duration-700">
+            <section className="w-full h-[300px] border-t border-brand-contrast/20 transition-all duration-700">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.314619371078!2d4.919047115802272!3d52.35565367978438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6099ae5dc3523%3A0x6bba46c921314d33!2sClos%20Amsterdam!5e0!3m2!1sen!2snl!4v1698765432100!5m2!1sen!2snl"
+                    src="https://maps.google.com/maps?q=Wijnbar%20Clos,%20Beukenplein%2050,%20Amsterdam&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
