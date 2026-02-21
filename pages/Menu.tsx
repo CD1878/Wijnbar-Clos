@@ -6,6 +6,8 @@ import { useSearchParams, Link } from "react-router-dom";
 export const Menu: React.FC = () => {
     const [searchParams] = useSearchParams();
     const [activeTab, setActiveTab] = useState<"wijn" | "menu">("wijn");
+    const [currentWinePage, setCurrentWinePage] = useState(1);
+    const totalWinePages = 25;
 
     useEffect(() => {
         const tab = searchParams.get("tab");
@@ -15,6 +17,21 @@ export const Menu: React.FC = () => {
             setActiveTab("wijn");
         }
     }, [searchParams]);
+
+    const handleNextPage = () => {
+        if (currentWinePage < totalWinePages) {
+            setCurrentWinePage(prev => prev + 1);
+            // Optionally scroll to top of menu
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+    };
+
+    const handlePrevPage = () => {
+        if (currentWinePage > 1) {
+            setCurrentWinePage(prev => prev - 1);
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className="min-h-screen pt-16 md:pt-24 bg-[#370028] fade-in transform-gpu">
@@ -41,20 +58,40 @@ export const Menu: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6 py-16">
                 {activeTab === "wijn" ? (
                     <div className="animate-fade-in w-full text-brand-cream flex flex-col items-center">
-                        {/* Wijnkaart PDF Viewer */}
+                        {/* Wijnkaart Pagination Viewer */}
                         <div className="w-full max-w-4xl bg-[#370028] flex flex-col items-center">
 
-                            <div className="w-full mb-8 flex flex-col items-center overflow-hidden drop-shadow-sm">
-                                {/* Menukaart Images (25 pages) */}
-                                {Array.from({ length: 25 }, (_, i) => i + 1).map((pageNum) => (
-                                    <img
-                                        key={`wijnkaart-${pageNum}`}
-                                        src={`/wijnkaart-pages/wijnkaart-${pageNum}.png`}
-                                        alt={`Wijnkaart Clos Pagina ${pageNum}`}
-                                        className="w-full max-w-3xl h-auto object-contain bg-white"
-                                        loading="lazy"
-                                    />
-                                ))}
+                            <div className="w-full mb-8 flex flex-col items-center overflow-hidden drop-shadow-sm min-h-[500px]">
+                                {/* Menukaart Current Image */}
+                                <img
+                                    key={`wijnkaart-${currentWinePage}`}
+                                    src={`/wijnkaart-pages/wijnkaart-${currentWinePage}.png`}
+                                    alt={`Wijnkaart Clos Pagina ${currentWinePage}`}
+                                    className="w-full max-w-3xl h-auto object-contain bg-white"
+                                />
+
+                                {/* Pagination Controls */}
+                                <div className="mt-8 flex items-center justify-between w-full max-w-3xl px-4 py-4 border-t border-brand-contrast/20">
+                                    <button
+                                        onClick={handlePrevPage}
+                                        disabled={currentWinePage === 1}
+                                        className={`font-sans tracking-[0.2em] uppercase text-xs md:text-sm font-bold flex items-center gap-2 transition-colors ${currentWinePage === 1 ? 'text-brand-cream/30 cursor-not-allowed' : 'text-brand-contrast hover:text-brand-cream'}`}
+                                    >
+                                        &larr; Vorige
+                                    </button>
+
+                                    <span className="font-serif italic text-brand-cream/70 text-sm md:text-base">
+                                        Pagina {currentWinePage} van {totalWinePages}
+                                    </span>
+
+                                    <button
+                                        onClick={handleNextPage}
+                                        disabled={currentWinePage === totalWinePages}
+                                        className={`font-sans tracking-[0.2em] uppercase text-xs md:text-sm font-bold flex items-center gap-2 transition-colors ${currentWinePage === totalWinePages ? 'text-brand-cream/30 cursor-not-allowed' : 'text-brand-contrast hover:text-brand-cream'}`}
+                                    >
+                                        Volgende &rarr;
+                                    </button>
+                                </div>
                             </div>
 
                             {/* High Wine Section */}
