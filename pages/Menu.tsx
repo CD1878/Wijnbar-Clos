@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 
 
@@ -8,6 +8,7 @@ export const Menu: React.FC = () => {
     const [activeTab, setActiveTab] = useState<"wijn" | "menu">("wijn");
     const [currentWinePage, setCurrentWinePage] = useState(1);
     const totalWinePages = 25;
+    const menuContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const tab = searchParams.get("tab");
@@ -18,18 +19,25 @@ export const Menu: React.FC = () => {
         }
     }, [searchParams]);
 
+    const scrollToTop = () => {
+        if (menuContainerRef.current) {
+            // Calculate position with offset for the sticky header tabs (72px + padding)
+            const y = menuContainerRef.current.getBoundingClientRect().top + window.scrollY - 140;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
+
     const handleNextPage = () => {
         if (currentWinePage < totalWinePages) {
             setCurrentWinePage(prev => prev + 1);
-            // Optionally scroll to top of menu
-            window.scrollTo({ top: 200, behavior: 'smooth' });
+            scrollToTop();
         }
     };
 
     const handlePrevPage = () => {
         if (currentWinePage > 1) {
             setCurrentWinePage(prev => prev - 1);
-            window.scrollTo({ top: 200, behavior: 'smooth' });
+            scrollToTop();
         }
     };
 
@@ -61,7 +69,10 @@ export const Menu: React.FC = () => {
                         {/* Wijnkaart Pagination Viewer */}
                         <div className="w-full max-w-4xl bg-[#370028] flex flex-col items-center">
 
-                            <div className="w-full mb-8 flex flex-col items-center overflow-hidden drop-shadow-sm min-h-[500px]">
+                            <div
+                                className="w-full mb-8 flex flex-col items-center overflow-hidden drop-shadow-sm min-h-[500px]"
+                                ref={menuContainerRef}
+                            >
                                 {/* Menukaart Current Image */}
                                 <img
                                     key={`wijnkaart-${currentWinePage}`}
