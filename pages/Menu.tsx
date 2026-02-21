@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams, Link } from "react-router-dom";
+import { X } from "lucide-react";
 
 
 
@@ -9,6 +10,7 @@ export const Menu: React.FC = () => {
     const [currentWinePage, setCurrentWinePage] = useState(1);
     const totalWinePages = 25;
     const menuContainerRef = useRef<HTMLDivElement>(null);
+    const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
     useEffect(() => {
         const tab = searchParams.get("tab");
@@ -78,7 +80,8 @@ export const Menu: React.FC = () => {
                                     key={`wijnkaart-${currentWinePage}`}
                                     src={`/wijnkaart-pages/wijnkaart-${currentWinePage}.png`}
                                     alt={`Wijnkaart Clos Pagina ${currentWinePage}`}
-                                    className="w-full max-w-3xl h-auto object-contain bg-white"
+                                    className="w-full max-w-3xl h-auto object-contain bg-white cursor-pointer hover:opacity-95 transition-opacity"
+                                    onClick={() => setLightboxImage(`/wijnkaart-pages/wijnkaart-${currentWinePage}.png`)}
                                 />
 
                                 {/* Pagination Controls */}
@@ -143,7 +146,8 @@ export const Menu: React.FC = () => {
                                 <img
                                     src="/menukaart-clos.png"
                                     alt="Menukaart Wijnbar Clos"
-                                    className="w-full max-w-3xl h-auto object-contain drop-shadow-sm"
+                                    className="w-full max-w-3xl h-auto object-contain drop-shadow-sm bg-white cursor-pointer hover:opacity-95 transition-opacity"
+                                    onClick={() => setLightboxImage("/menukaart-clos.png")}
                                 />
                             </div>
 
@@ -154,6 +158,28 @@ export const Menu: React.FC = () => {
 
             {/* Spacer for bottom */}
             <div className="h-24"></div>
+
+            {/* Lightbox Overlay */}
+            {lightboxImage && (
+                <div
+                    className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300"
+                    onClick={() => setLightboxImage(null)}
+                >
+                    <button
+                        className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full"
+                        onClick={() => setLightboxImage(null)}
+                        aria-label="Close fullscreen"
+                    >
+                        <X size={32} />
+                    </button>
+                    <img
+                        src={lightboxImage}
+                        alt="Fullscreen Menu"
+                        className="max-w-full max-h-[90vh] object-contain bg-white rounded-sm drop-shadow-2xl scale-in-center"
+                        onClick={(e) => e.stopPropagation()} // Prevent clicking image from closing
+                    />
+                </div>
+            )}
         </div>
     );
 };
