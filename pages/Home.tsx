@@ -20,7 +20,7 @@ const HeroSection = () => (
 
     {/* Centered Logo */}
     <div className="z-20 flex flex-col items-center text-center mt-[-5%]">
-      <img src="/logo-gastro.png" alt="Clos Gastro Wijnbar" className="w-[80vw] md:w-[600px] h-auto object-contain drop-shadow-lg" />
+      <img src="/logo-tro-wijba.png" alt="Clos Gastro Wijnbar" className="w-[80vw] md:w-[600px] h-auto object-contain drop-shadow-lg" />
 
       {/* Reserve Text Link (Formitable) */}
       <div className="mt-24 md:mt-32">
