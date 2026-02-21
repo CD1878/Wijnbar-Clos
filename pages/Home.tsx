@@ -10,12 +10,12 @@ const HeroSection = () => (
   <section className="relative min-h-[90vh] w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6">
 
     {/* Clearer Wine Stain (Left) */}
-    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none select-none opacity-40 mix-blend-multiply">
+    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none select-none opacity-50 mix-blend-screen contrast-125 brightness-150">
       <img src="/wine-stain-large.png" alt="" className="w-full h-full object-contain drop-shadow-2xl" onError={(e) => {
         // Fallback to SVG if actual image stain is missing
         e.currentTarget.style.display = 'none';
       }} />
-      <WineStain className="absolute w-[600px] h-[600px] top-[10%] left-[-10%]" color="#591c35" opacity={0.6} rotation={15} scale={1.4} />
+      <WineStain className="absolute w-[600px] h-[600px] top-[10%] left-[-10%]" color="#744365" opacity={0.6} rotation={15} scale={1.4} />
     </div>
 
     {/* Centered Logo */}
