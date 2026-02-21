@@ -8,6 +8,7 @@ import { Jobs } from './pages/Jobs';
 import { Tasting } from './pages/Tasting';
 import { Menu } from './pages/Menu';
 import { Contact } from './pages/Contact';
+import { Reserveren } from './pages/Reserveren';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -43,6 +44,7 @@ const AppContent: React.FC = () => {
           <Route path="/wijnproeven" element={<Tasting />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/reserveren" element={<Reserveren />} />
         </Routes>
       </main>
 

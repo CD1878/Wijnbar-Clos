@@ -1,66 +1,38 @@
 import React from 'react';
 import { Instagram } from 'lucide-react';
-import { Button } from './Button';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-12 md:py-16 px-6 border-t border-brand-gold/20" style={{ backgroundColor: '#744365' }}>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
+    <footer className="py-12 px-6" style={{ backgroundColor: '#744365' }}>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-brand-cream gap-8 font-sans">
 
-        {/* Address */}
-        <div className="flex flex-col items-center md:items-start space-y-2">
-          <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-brand-gold mb-2">Contact</h4>
-          <p className="font-serif text-brand-cream">Beukenplein 50</p>
-          <p className="font-serif text-brand-cream">1091 ML Amsterdam</p>
-
-          <div className="flex flex-col mt-4">
-            <a href="mailto:social@closamsterdam.nl" className="font-sans text-sm text-brand-cream/80 hover:text-brand-gold"><span className="text-brand-cream">E:</span> <span className="underline decoration-brand-cream/50">social@closamsterdam.nl</span></a>
-            <a href="tel:0207733043" className="font-sans text-sm text-brand-cream/80 hover:text-brand-gold"><span className="text-brand-cream">T:</span> <span className="underline decoration-brand-cream/50">020-7733043</span></a>
-          </div>
+        {/* Address & Contact */}
+        <div className="flex flex-col items-center md:items-start text-sm space-y-1">
+          <p className="font-bold tracking-widest uppercase mb-2">Clos Amsterdam</p>
+          <p>Beukenplein 50, Amsterdam-Oost</p>
+          <a href="tel:0207733043" className="hover:text-brand-contrast transition-colors">T: 020-7733043</a>
+          <a href="mailto:social@closamsterdam.nl" className="hover:text-brand-contrast transition-colors">E: social@closamsterdam.nl</a>
         </div>
 
-        {/* Hours */}
-        <div className="flex flex-col items-center md:items-start space-y-2">
-          <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-brand-gold mb-2">Openingstijden</h4>
-          <div className="grid grid-cols-[100px_1fr] gap-4 font-sans text-sm text-brand-cream/80 text-left">
-            <span>Maandag</span>
-            <span>Gesloten</span>
-
-            <span>Dinsdag</span>
-            <span>17:00 - 23:00</span>
-
-            <span>Woensdag</span>
-            <span>17:00 - 23:00</span>
-
-            <span>Donderdag</span>
-            <span>17:00 - 00:00</span>
-
-            <span>Vrijdag</span>
-            <span>15:00 - 01:00</span>
-
-            <span>Zaterdag</span>
-            <span>15:00 - 01:00</span>
-
-            <span>Zondag</span>
-            <span>15:00 - 22:00</span>
-          </div>
-        </div>
-
-        {/* Social & CTA */}
-        <div className="flex flex-col items-center md:items-end space-y-6">
-          <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="text-brand-cream hover:text-brand-gold transition-colors">
+        {/* Social */}
+        <div className="flex items-center space-x-4">
+          <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition-opacity">
             <Instagram size={24} strokeWidth={1.5} />
           </a>
-          <Button className="min-w-[160px] bg-brand-gold text-brand-green-dark hover:bg-brand-gold/90 border-none">
-            Reserveer Tafel
-          </Button>
+        </div>
+
+        {/* Reserveren link/button */}
+        <div className="flex flex-col items-center md:items-end text-sm">
+          <p className="font-bold tracking-widest uppercase mb-2">Reserveren</p>
+          <a href="#reserve" className="px-6 py-2 border border-brand-cream hover:bg-brand-cream hover:text-[#744365] transition-all tracking-widest uppercase text-xs">
+            Reserveer Direct
+          </a>
         </div>
 
       </div>
-      <div className="mt-8 md:mt-16 text-center">
-        <p className="text-brand-gold/50 text-xs font-sans tracking-widest uppercase">
-          &copy; {new Date().getFullYear()} Wijnbar Clos. All rights reserved | Made by <a href="https://chefdigital.nl" target="_blank" className="hover:text-brand-gold transition-colors underline decoration-brand-gold/50 hover:decoration-brand-gold">Chef Digital</a>
-        </p>
+
+      <div className="mt-12 text-center text-xs text-brand-cream/60 font-sans tracking-widest uppercase">
+        <p>&copy; {new Date().getFullYear()} Wijnbar Clos</p>
       </div>
     </footer>
   );

@@ -64,7 +64,7 @@ export const WineFlipbook: React.FC = () => {
                             </svg>
                         </div>
                         <h1 className="font-display text-4xl text-brand-green-dark uppercase tracking-[0.3em] mb-4">Wijnkaart</h1>
-                        <div className="w-16 h-px bg-brand-gold"></div>
+                        <div className="w-16 h-px bg-brand-contrast"></div>
                         <p className="font-body text-brand-grey/60 italic mt-4 text-sm">Wijnbar Clos</p>
                     </div>
                 </Page>
@@ -82,7 +82,7 @@ export const WineFlipbook: React.FC = () => {
                     return chunks.map((chunk, chunkIndex) => (
                         <Page key={`${category.title}-${chunkIndex}`}>
                             <div className="h-full flex flex-col">
-                                <h3 className="font-display text-2xl text-brand-green-dark mb-6 uppercase tracking-widest text-center border-b border-brand-gold/30 pb-4">
+                                <h3 className="font-display text-2xl text-brand-green-dark mb-6 uppercase tracking-widest text-center border-b border-brand-contrast/30 pb-4">
                                     {category.title} {chunks.length > 1 && <span className="text-sm align-middle opacity-50">({chunkIndex + 1}/{chunks.length})</span>}
                                 </h3>
                                 <div className="space-y-4 pr-2 custom-scrollbar flex-grow">

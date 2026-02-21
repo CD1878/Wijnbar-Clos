@@ -15,10 +15,10 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = "px-8 py-3 transition-all duration-300 text-sm tracking-widest uppercase font-sans font-medium";
 
   const variants = {
-    primary: "bg-brand-gold text-brand-green-dark hover:bg-brand-cream hover:text-brand-green-dark border border-brand-gold hover:border-brand-cream",
+    primary: "bg-brand-contrast text-brand-green-dark hover:bg-brand-cream hover:text-brand-green-dark border border-brand-contrast hover:border-brand-cream",
     outline: "bg-transparent text-brand-green-dark border border-brand-green-dark hover:bg-brand-green-dark hover:text-brand-cream",
     "white-outline": "bg-transparent text-brand-cream border border-brand-cream hover:bg-brand-cream hover:text-brand-green-dark",
-    text: "bg-transparent text-brand-green-dark underline underline-offset-4 hover:text-brand-gold px-0 py-0",
+    text: "bg-transparent text-brand-green-dark underline underline-offset-4 hover:text-brand-contrast px-0 py-0",
   };
 
   return (

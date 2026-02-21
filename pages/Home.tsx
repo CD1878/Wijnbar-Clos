@@ -9,42 +9,32 @@ import { WineStain } from '../components/WineStain';
 const HeroSection = () => (
   <section className="relative min-h-[90vh] w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6">
 
-    {/* Realistic SVG Wine Stains (Left) */}
-    <div className="absolute left-[5%] top-[45%] -translate-y-1/2 w-[700px] h-[700px] pointer-events-none select-none">
-      {/* Layered stains for depth */}
-      <WineStain className="w-[500px] h-[500px] top-0 left-0" color="#591c35" opacity={0.6} rotation={15} scale={1.2} />
-      <WineStain className="w-[400px] h-[400px] top-[100px] left-[100px]" color="#591c35" opacity={0.4} rotation={-20} scale={0.8} />
-      <WineStain className="w-[200px] h-[200px] top-[300px] left-[-50px]" color="#591c35" opacity={0.3} rotation={45} scale={1.5} />
-
-      {/* Extra splatters */}
-      <div className="absolute top-[20%] left-[40%] text-[#591c35] opacity-50 text-4xl blur-[1px]">•</div>
-      <div className="absolute bottom-[30%] right-[40%] text-[#591c35] opacity-60 text-2xl">•</div>
+    {/* Clearer Wine Stain (Left) */}
+    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none select-none opacity-40 mix-blend-multiply">
+      <img src="/wine-stain-large.png" alt="" className="w-full h-full object-contain drop-shadow-2xl" onError={(e) => {
+        // Fallback to SVG if actual image stain is missing
+        e.currentTarget.style.display = 'none';
+      }} />
+      <WineStain className="absolute w-[600px] h-[600px] top-[10%] left-[-10%]" color="#591c35" opacity={0.6} rotation={15} scale={1.4} />
     </div>
 
-
-
     {/* Centered Logo */}
-    <div className="z-20 flex flex-col items-center text-center">
-      <Logo className="w-[50vw] md:w-[280px] h-auto text-white brightness-200 drop-shadow-2xl opacity-95" />
-      <span className="font-display text-brand-gold/80 text-sm md:text-lg tracking-[0.6em] uppercase mt-6 ml-2">
-        Gastro Wijnbar
-      </span>
+    <div className="z-20 flex flex-col items-center text-center mt-[-5%]">
+      <img src="/logo-gastro.png" alt="Clos Gastro Wijnbar" className="w-[80vw] md:w-[600px] h-auto object-contain drop-shadow-lg" />
 
-      {/* Reserve Button */}
-      <div className="mt-16">
-        <Link to="#reserve">
-          <Button variant="primary" className="bg-brand-gold text-brand-dark hover:bg-white hover:text-brand-dark border-none py-3 px-10 text-base rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
-            Reserveren
-          </Button>
-        </Link>
+      {/* Reserve Text Link (Formitable) */}
+      <div className="mt-24 md:mt-32">
+        <a href="#reserve" className="font-sans text-brand-cream hover:text-brand-contrast transition-colors duration-300 uppercase tracking-[0.3em] text-sm md:text-base border-b border-transparent hover:border-brand-contrast pb-1">
+          Reserveren
+        </a>
       </div>
     </div>
 
     {/* Mobile Links (Bottom) */}
     <div className="md:hidden absolute bottom-12 left-0 w-full flex justify-center gap-8 z-30 text-brand-cream/80">
-      <Link to="/menu?tab=menu" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Menu</Link>
-      <Link to="/menu?tab=wijn" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Wijn</Link>
-      <Link to="/contact" className="font-display uppercase tracking-widest text-xs border-b border-white/10 pb-1">Contact</Link>
+      <Link to="/menu?tab=menu" className="font-sans uppercase tracking-widest text-xs border-b border-white/10 pb-1">Menu</Link>
+      <Link to="/menu?tab=wijn" className="font-sans uppercase tracking-widest text-xs border-b border-white/10 pb-1">Wijn</Link>
+      <Link to="/contact" className="font-sans uppercase tracking-widest text-xs border-b border-white/10 pb-1">Contact</Link>
     </div>
   </section>
 );

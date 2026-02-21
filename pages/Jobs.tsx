@@ -24,7 +24,7 @@ export const Jobs: React.FC = () => {
             <div className="relative">
               <select
                 id="job-select"
-                className="w-full bg-brand-cream/20 border-b border-brand-grey/30 py-3 text-brand-grey font-serif focus:outline-none focus:border-brand-gold transition-colors appearance-none rounded-none"
+                className="w-full bg-brand-cream/20 border-b border-brand-grey/30 py-3 text-brand-grey font-serif focus:outline-none focus:border-brand-contrast transition-colors appearance-none rounded-none"
                 defaultValue=""
               >
                 <option value="" disabled>Kies een functie...</option>
@@ -51,7 +51,7 @@ export const Jobs: React.FC = () => {
               file:rounded-none file:border-0
               file:text-xs file:font-bold file:uppercase file:tracking-widest
               file:bg-brand-green-dark file:text-brand-cream
-              hover:file:bg-brand-gold hover:file:text-brand-green-dark
+              hover:file:bg-brand-contrast hover:file:text-brand-green-dark
               file:transition-colors cursor-pointer
             "/>
           </div>
