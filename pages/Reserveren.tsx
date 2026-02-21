@@ -28,7 +28,7 @@ export const Reserveren: React.FC = () => {
                                 </a>
                             </span>
                         </p>
-                        <a href="#reserve" className="inline-block border border-brand-contrast bg-brand-contrast text-[#370028] px-10 py-4 font-sans font-bold uppercase tracking-[0.2em] hover:bg-brand-cream hover:border-brand-cream transition-colors shadow-lg">
+                        <a href="#reserve" className="inline-block border border-[#744365] bg-[#744365] text-brand-cream px-10 py-4 font-sans font-bold uppercase tracking-[0.2em] hover:bg-[#370028] hover:border-[#370028] hover:text-brand-cream transition-colors shadow-lg">
                             Direct Reserveren
                         </a>
                     </div>
@@ -51,7 +51,7 @@ export const Reserveren: React.FC = () => {
                                     Schuif aan.
                                 </p>
                                 <Link to="/contact">
-                                    <Button variant="outline" className="border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-[#370028] px-10 py-4 font-sans font-bold uppercase tracking-[0.2em] transition-colors shadow-lg">
+                                    <Button variant="outline" className="border-none bg-[#744365] text-brand-cream hover:bg-[#370028] hover:text-brand-cream px-10 py-4 font-sans font-bold uppercase tracking-[0.2em] transition-colors shadow-lg">
                                         Groepsreservering
                                     </Button>
                                 </Link>
