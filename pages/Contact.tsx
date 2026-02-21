@@ -104,7 +104,7 @@ export const Contact: React.FC = () => {
                             <ContactInput label="Email" id="email" type="email" placeholder="email@adres.nl" />
                             <ContactInput label="Aantal Personen" id="persons" type="number" placeholder="Bv. 10" />
                             <ContactTextArea label="Bijzonderheden" id="message" placeholder="Dieetwensen of andere opmerkingen?" />
-                            <Button type="submit" variant="primary" className="mt-8 w-full justify-center bg-brand-cream text-[#370028] hover:bg-transparent hover:text-brand-cream uppercase tracking-[0.2em] font-sans font-bold border border-brand-cream py-4 text-sm transition-colors">
+                            <Button type="submit" variant="primary" className="mt-8 w-full justify-center bg-[#744365] text-brand-cream hover:bg-brand-cream hover:text-[#370028] uppercase tracking-[0.2em] font-sans font-bold border-none py-4 text-sm transition-colors">
                                 Schuif aan
                             </Button>
                         </form>
