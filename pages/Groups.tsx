@@ -7,7 +7,7 @@ const GlassInput = ({ label, ...props }: any) => (
     <label className="font-display text-brand-dark text-sm tracking-widest uppercase">{label}</label>
     <input
       {...props}
-      className="bg-white/40 border-b border-brand-dark/20 p-3 font-body text-brand-dark focus:outline-none focus:border-brand-red transition-colors placeholder:text-brand-dark/30"
+      className="bg-white/40 border-b border-brand-dark/20 py-3 px-0 w-full font-body text-brand-dark focus:outline-none focus:border-brand-red transition-colors placeholder:text-brand-dark/30"
     />
   </div>
 );
@@ -17,7 +17,7 @@ const GlassTextArea = ({ label, ...props }: any) => (
     <label className="font-display text-brand-dark text-sm tracking-widest uppercase">{label}</label>
     <textarea
       {...props}
-      className="bg-white/40 border-b border-brand-dark/20 p-3 font-body text-brand-dark focus:outline-none focus:border-brand-red transition-colors placeholder:text-brand-dark/30 min-h-[120px]"
+      className="bg-white/40 border-b border-brand-dark/20 py-3 px-0 w-full font-body text-brand-dark focus:outline-none focus:border-brand-red transition-colors placeholder:text-brand-dark/30 min-h-[120px]"
     />
   </div>
 );
