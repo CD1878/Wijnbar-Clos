@@ -50,10 +50,11 @@ export const Reserveren: React.FC = () => {
                                 <p className="font-sans font-bold uppercase tracking-widest mb-8 text-brand-contrast">
                                     Schuif aan.
                                 </p>
-                                <Link to="/contact">
-                                    <Button variant="outline" className="border-none bg-[#744365] text-brand-cream hover:bg-[#370028] hover:text-brand-cream px-10 py-4 font-sans font-bold uppercase tracking-[0.2em] transition-colors shadow-lg">
-                                        Groepsreservering
-                                    </Button>
+                                <Link
+                                    to="/contact"
+                                    className="inline-block border border-[#744365] bg-[#744365] text-brand-cream px-10 py-4 font-sans font-bold uppercase tracking-[0.2em] hover:bg-[#370028] hover:border-[#370028] hover:text-brand-cream transition-colors shadow-lg"
+                                >
+                                    Groepsreservering
                                 </Link>
                             </div>
                         </div>
