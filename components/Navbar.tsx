@@ -18,11 +18,11 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Background logic: Transparent at top of homepage, Solid Dark Green elsewhere or when scrolled
+  // Background logic: Always use the consistent #370028 background 
   const isHome = location.pathname === '/';
   const navBackground = (isHome && !scrolled && !isOpen)
     ? 'bg-transparent text-brand-cream'
-    : 'bg-brand-green-dark/95 backdrop-blur-sm text-brand-cream shadow-md border-b border-brand-contrast/20';
+    : 'bg-[#370028] text-brand-cream shadow-md border-b border-brand-contrast/20';
 
   const logoColor = 'text-brand-cream'; // Always cream as logo is white/light image
 

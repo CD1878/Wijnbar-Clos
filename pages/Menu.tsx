@@ -44,16 +44,16 @@ export const Menu: React.FC = () => {
                         {/* Wijnkaart PDF Viewer */}
                         <div className="w-full max-w-4xl bg-[#370028] flex flex-col items-center">
 
-                            <div className="w-full border border-brand-contrast/30 mb-8 overflow-hidden bg-brand-cream/5 flex flex-col items-center">
+                            <div className="w-full mb-8 flex flex-col items-center">
                                 {/* Fallback/Mobile download link above iframe for convenience */}
-                                <div className="p-4 md:hidden w-full text-center border-b border-brand-contrast/20">
+                                <div className="p-4 md:hidden w-full text-center">
                                     <a href="/wijnkaart-clos.pdf" target="_blank" className="font-sans text-brand-cream uppercase tracking-widest text-xs border border-brand-contrast px-4 py-2 hover:bg-brand-contrast hover:text-[#370028] transition-colors inline-block">
                                         Open Wijnkaart PDF
                                     </a>
                                 </div>
                                 <iframe
                                     src="/wijnkaart-clos.pdf#view=FitH"
-                                    className="w-full h-[70vh] min-h-[600px]"
+                                    className="w-full h-[75vh] min-h-[700px] border-none"
                                     title="Wijnkaart PDF"
                                 ></iframe>
                             </div>
@@ -88,22 +88,16 @@ export const Menu: React.FC = () => {
                         </div>
                     </div>
                 ) : (
-                    <div className="animate-fade-in w-full text-brand-cream flex flex-col items-center">
-                        {/* Menukaart PDF Viewer */}
+                    <div className="animate-fade-in w-full flex flex-col items-center">
+                        {/* Menukaart Image Viewer */}
                         <div className="w-full max-w-4xl bg-[#370028] flex flex-col items-center">
 
-                            <div className="w-full border border-brand-contrast/30 overflow-hidden bg-brand-cream/5 flex flex-col items-center">
-                                {/* Fallback/Mobile download link */}
-                                <div className="p-4 md:hidden w-full text-center border-b border-brand-contrast/20">
-                                    <a href="/menukaart-clos.pdf" target="_blank" className="font-sans text-brand-cream uppercase tracking-widest text-xs border border-brand-contrast px-4 py-2 hover:bg-brand-contrast hover:text-[#370028] transition-colors inline-block">
-                                        Open Menukaart PDF
-                                    </a>
-                                </div>
-                                <iframe
-                                    src="/menukaart-clos.pdf#view=FitH"
-                                    className="w-full h-[70vh] min-h-[600px]"
-                                    title="Menukaart PDF"
-                                ></iframe>
+                            <div className="w-full flex justify-center">
+                                <img
+                                    src="/menukaart-clos.png"
+                                    alt="Menukaart Wijnbar Clos"
+                                    className="w-full max-w-3xl h-auto object-contain drop-shadow-sm"
+                                />
                             </div>
 
                         </div>

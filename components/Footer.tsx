@@ -1,35 +1,23 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-12 md:py-16 px-6 bg-[#370028] border-t border-brand-cream/10">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-brand-cream gap-8 font-sans">
+    <footer className="py-24 px-6 bg-[#370028] border-t border-brand-cream/10">
+      <div className="max-w-7xl mx-auto flex justify-center items-center text-brand-cream">
 
-        {/* Copyright/Left side */}
-        <div className="flex-1 flex justify-center md:justify-start">
-          <p className="text-xs tracking-widest uppercase text-brand-cream/60">
-            &copy; {new Date().getFullYear()} Wijnbar Clos
-          </p>
-        </div>
+        <div className="flex flex-row items-center gap-6">
+          <div className="font-display text-5xl md:text-6xl tracking-widest text-brand-cream font-bold">
+            CLOS
+          </div>
 
-        {/* Right Action Block (Instagram + Reserveren) */}
-        <div className="flex-1 flex justify-center md:justify-end items-center gap-4">
-          <a
-            href="https://www.instagram.com/closamsterdam/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 border border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-[#370028] transition-colors flex items-center justify-center rounded-md"
-          >
-            <Instagram size={20} strokeWidth={2} />
-          </a>
-          <Link
-            to="/reserveren"
-            className="px-8 py-3 border border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-[#370028] transition-all tracking-[0.2em] uppercase text-xs md:text-sm font-bold"
-          >
-            Reserveren
-          </Link>
+          <div className="flex flex-col border-l-2 border-brand-cream/60 pl-6 py-1 space-y-1">
+            <span className="font-sans text-sm md:text-base tracking-widest uppercase font-bold text-brand-cream/90">
+              Dinsdag - Zondag
+            </span>
+            <span className="font-sans text-sm md:text-base tracking-widest uppercase font-bold text-brand-cream/90">
+              Beukenplein 50
+            </span>
+          </div>
         </div>
 
       </div>
