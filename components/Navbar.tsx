@@ -66,26 +66,19 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         className={`fixed inset-0 bg-brand-cream z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           }`}
       >
-        <div className="flex flex-col space-y-8 text-center">
+        <div className="flex flex-col space-y-10 text-center">
 
-          <Link to="/groepen" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-contrast transition-all hover:scale-105 duration-300">Groepen</Link>
-          <Link to="/wijnproeven" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-contrast transition-all hover:scale-105 duration-300">Wijnproeven</Link>
-          <Link to="/vacatures" onClick={toggleMenu} className="font-display text-4xl text-brand-green-dark hover:text-brand-contrast transition-all hover:scale-105 duration-300">Vacatures</Link>
+          <Link to="/" onClick={toggleMenu} className="font-display text-4xl text-[#370028] hover:text-brand-contrast transition-all hover:scale-105 duration-300">Home</Link>
+          <Link to="/menu?tab=menu" onClick={toggleMenu} className="font-display text-4xl text-[#370028] hover:text-brand-contrast transition-all hover:scale-105 duration-300">Menu</Link>
+          <Link to="/menu?tab=wijn" onClick={toggleMenu} className="font-display text-4xl text-[#370028] hover:text-brand-contrast transition-all hover:scale-105 duration-300">Wijn</Link>
+          <Link to="/contact" onClick={toggleMenu} className="font-display text-4xl text-[#370028] hover:text-brand-contrast transition-all hover:scale-105 duration-300">Contact</Link>
 
-          <div className="w-12 h-px bg-brand-sand mx-auto my-8"></div>
-
-          <div className="flex flex-col space-y-4 font-body text-sm tracking-widest text-brand-grey/70">
-            <Link to="/" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Home</Link>
-            <Link to="/menu?tab=wijn" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Wijnkaart</Link>
-            <Link to="/menu?tab=menu" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Menukaart</Link>
-            <Link to="/contact" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Contact</Link>
-
-            <div className="pt-4">
-              <Link to="/reserveren" onClick={toggleMenu} className="px-8 py-3 bg-[#370028] text-brand-cream border border-[#370028] uppercase tracking-widest font-bold text-xs hover:bg-brand-contrast hover:border-brand-contrast hover:text-brand-cream transition-all inline-block">
-                Reserveren
-              </Link>
-            </div>
+          <div className="pt-8">
+            <Link to="/reserveren" onClick={toggleMenu} className="px-10 py-4 bg-[#744365] text-brand-cream border-none uppercase tracking-[0.2em] font-sans font-bold text-sm hover:bg-[#370028] hover:text-brand-cream transition-colors shadow-lg inline-block">
+              Reserveren
+            </Link>
           </div>
+
         </div>
       </div>
     </>
