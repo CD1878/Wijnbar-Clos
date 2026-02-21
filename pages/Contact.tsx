@@ -4,20 +4,20 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 const ContactInput = ({ label, ...props }: any) => (
     <div className="flex flex-col gap-2 mb-4">
-        <label className="font-sans text-brand-cream text-sm tracking-[0.2em] font-bold uppercase">{label}</label>
+        <label className="font-sans text-[#370028] text-sm tracking-[0.2em] font-bold uppercase">{label}</label>
         <input
             {...props}
-            className="bg-transparent border-b border-brand-cream/50 p-3 font-serif text-brand-cream focus:outline-none focus:border-brand-cream transition-colors placeholder:text-brand-cream/60"
+            className="bg-transparent border-b border-[#370028]/50 p-3 font-serif text-[#370028] focus:outline-none focus:border-[#370028] transition-colors placeholder:text-[#370028]/60"
         />
     </div>
 );
 
 const ContactTextArea = ({ label, ...props }: any) => (
     <div className="flex flex-col gap-2 mb-4">
-        <label className="font-sans text-brand-cream text-sm tracking-[0.2em] font-bold uppercase">{label}</label>
+        <label className="font-sans text-[#370028] text-sm tracking-[0.2em] font-bold uppercase">{label}</label>
         <textarea
             {...props}
-            className="bg-transparent border-b border-brand-cream/50 p-3 font-serif text-brand-cream focus:outline-none focus:border-brand-cream transition-colors placeholder:text-brand-cream/60 min-h-[120px]"
+            className="bg-transparent border-b border-[#370028]/50 p-3 font-serif text-[#370028] focus:outline-none focus:border-[#370028] transition-colors placeholder:text-[#370028]/60 min-h-[120px]"
         />
     </div>
 );
@@ -96,15 +96,15 @@ export const Contact: React.FC = () => {
                     </div>
 
                     {/* Contact Form (Groepsreservering) */}
-                    <div className="border border-brand-cream/30 p-8 md:p-10 bg-transparent shadow-xl relative overflow-hidden">
-                        <h3 className="font-sans text-2xl text-brand-cream font-bold tracking-widest uppercase mb-2">Groepsreservering</h3>
-                        <p className="font-serif text-brand-cream/80 mb-8 italic">Vanaf 8 personen nemen we de organisatie uit handen.</p>
+                    <div className="border border-[#744365]/20 p-8 md:p-10 bg-brand-cream shadow-xl relative overflow-hidden">
+                        <h3 className="font-sans text-2xl text-[#370028] font-bold tracking-widest uppercase mb-2">Groepsreservering</h3>
+                        <p className="font-serif text-[#370028]/80 mb-8 italic">Vanaf 8 personen nemen we de organisatie uit handen.</p>
                         <form className="flex flex-col z-10 relative">
                             <ContactInput label="Naam" id="name" type="text" placeholder="Uw naam" />
                             <ContactInput label="Email" id="email" type="email" placeholder="email@adres.nl" />
                             <ContactInput label="Aantal Personen" id="persons" type="number" placeholder="Bv. 10" />
                             <ContactTextArea label="Bijzonderheden" id="message" placeholder="Dieetwensen of andere opmerkingen?" />
-                            <Button type="submit" variant="primary" className="mt-8 w-full justify-center bg-[#744365] text-brand-cream hover:bg-brand-cream hover:text-[#370028] uppercase tracking-[0.2em] font-sans font-bold border-none py-4 text-sm transition-colors">
+                            <Button type="submit" variant="primary" className="mt-8 w-full justify-center bg-[#744365] text-brand-cream hover:bg-[#370028] hover:text-brand-cream uppercase tracking-[0.2em] font-sans font-bold border-none py-4 text-sm transition-colors">
                                 Schuif aan
                             </Button>
                         </form>
