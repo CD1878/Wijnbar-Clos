@@ -21,13 +21,6 @@ const HeroSection = () => (
     {/* Centered Logo */}
     <div className="z-20 flex flex-col items-center text-center mt-[-5%]">
       <img src="/logo-tro-wijba.png" alt="Clos Gastro Wijnbar" className="w-[80vw] md:w-[600px] h-auto object-contain drop-shadow-lg" />
-
-      {/* Reserve Text Link (Formitable) */}
-      <div className="mt-24 md:mt-32">
-        <a href="#reserve" className="font-sans text-brand-cream hover:text-brand-contrast transition-colors duration-300 uppercase tracking-[0.3em] text-sm md:text-base border-b border-transparent hover:border-brand-contrast pb-1">
-          Reserveren
-        </a>
-      </div>
     </div>
 
     {/* Mobile Links (Bottom) */}
