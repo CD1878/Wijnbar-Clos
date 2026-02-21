@@ -1,38 +1,37 @@
 import React from 'react';
 import { Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-12 px-6" style={{ backgroundColor: '#744365' }}>
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-brand-cream gap-8 font-sans">
+    <footer className="py-12 md:py-16 px-6 bg-[#370028] border-t border-brand-cream/10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-brand-cream gap-8 font-sans">
 
-        {/* Address & Contact */}
-        <div className="flex flex-col items-center md:items-start text-sm space-y-1">
-          <p className="font-bold tracking-widest uppercase mb-2">Clos Amsterdam</p>
-          <p>Beukenplein 50, Amsterdam-Oost</p>
-          <a href="tel:0207733043" className="hover:text-brand-contrast transition-colors">T: 020-7733043</a>
-          <a href="mailto:social@closamsterdam.nl" className="hover:text-brand-contrast transition-colors">E: social@closamsterdam.nl</a>
+        {/* Copyright/Left side */}
+        <div className="flex-1 flex justify-center md:justify-start">
+          <p className="text-xs tracking-widest uppercase text-brand-cream/60">
+            &copy; {new Date().getFullYear()} Wijnbar Clos
+          </p>
         </div>
 
-        {/* Social */}
-        <div className="flex items-center space-x-4">
-          <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="hover:opacity-75 transition-opacity">
-            <Instagram size={24} strokeWidth={1.5} />
+        {/* Right Action Block (Instagram + Reserveren) */}
+        <div className="flex-1 flex justify-center md:justify-end items-center gap-4">
+          <a
+            href="https://www.instagram.com/closamsterdam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-[#370028] transition-colors flex items-center justify-center rounded-md"
+          >
+            <Instagram size={20} strokeWidth={2} />
           </a>
+          <Link
+            to="/reserveren"
+            className="px-8 py-3 border border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-[#370028] transition-all tracking-[0.2em] uppercase text-xs md:text-sm font-bold"
+          >
+            Reserveren
+          </Link>
         </div>
 
-        {/* Reserveren link/button */}
-        <div className="flex flex-col items-center md:items-end text-sm">
-          <p className="font-bold tracking-widest uppercase mb-2">Reserveren</p>
-          <a href="#reserve" className="px-6 py-2 border border-brand-cream hover:bg-brand-cream hover:text-[#744365] transition-all tracking-widest uppercase text-xs">
-            Reserveer Direct
-          </a>
-        </div>
-
-      </div>
-
-      <div className="mt-12 text-center text-xs text-brand-cream/60 font-sans tracking-widest uppercase">
-        <p>&copy; {new Date().getFullYear()} Wijnbar Clos</p>
       </div>
     </footer>
   );

@@ -7,7 +7,7 @@ const ContactInput = ({ label, ...props }: any) => (
         <label className="font-sans text-brand-cream text-sm tracking-[0.2em] font-bold uppercase">{label}</label>
         <input
             {...props}
-            className="bg-transparent border-b border-brand-contrast/50 p-3 font-serif text-brand-cream focus:outline-none focus:border-brand-cream transition-colors placeholder:text-brand-cream/30"
+            className="bg-transparent border-b border-brand-cream/50 p-3 font-serif text-brand-cream focus:outline-none focus:border-brand-cream transition-colors placeholder:text-brand-cream/60"
         />
     </div>
 );
@@ -17,7 +17,7 @@ const ContactTextArea = ({ label, ...props }: any) => (
         <label className="font-sans text-brand-cream text-sm tracking-[0.2em] font-bold uppercase">{label}</label>
         <textarea
             {...props}
-            className="bg-transparent border-b border-brand-contrast/50 p-3 font-serif text-brand-cream focus:outline-none focus:border-brand-cream transition-colors placeholder:text-brand-cream/30 min-h-[120px]"
+            className="bg-transparent border-b border-brand-cream/50 p-3 font-serif text-brand-cream focus:outline-none focus:border-brand-cream transition-colors placeholder:text-brand-cream/60 min-h-[120px]"
         />
     </div>
 );
@@ -96,15 +96,15 @@ export const Contact: React.FC = () => {
                     </div>
 
                     {/* Contact Form (Groepsreservering) */}
-                    <div className="border border-brand-contrast/30 p-8 md:p-10 bg-[#744365]/10 shadow-xl">
+                    <div className="border border-brand-cream/30 p-8 md:p-10 bg-transparent shadow-xl relative overflow-hidden">
                         <h3 className="font-sans text-2xl text-brand-cream font-bold tracking-widest uppercase mb-2">Groepsreservering</h3>
                         <p className="font-serif text-brand-cream/80 mb-8 italic">Vanaf 8 personen nemen we de organisatie uit handen.</p>
-                        <form className="flex flex-col">
+                        <form className="flex flex-col z-10 relative">
                             <ContactInput label="Naam" id="name" type="text" placeholder="Uw naam" />
                             <ContactInput label="Email" id="email" type="email" placeholder="email@adres.nl" />
                             <ContactInput label="Aantal Personen" id="persons" type="number" placeholder="Bv. 10" />
                             <ContactTextArea label="Bijzonderheden" id="message" placeholder="Dieetwensen of andere opmerkingen?" />
-                            <Button type="submit" variant="primary" className="mt-8 w-full justify-center bg-brand-contrast text-[#370028] hover:bg-brand-cream hover:text-[#370028] uppercase tracking-[0.2em] font-sans font-bold border-none py-4 text-sm">
+                            <Button type="submit" variant="primary" className="mt-8 w-full justify-center bg-brand-cream text-[#370028] hover:bg-transparent hover:text-brand-cream uppercase tracking-[0.2em] font-sans font-bold border border-brand-cream py-4 text-sm transition-colors">
                                 Schuif aan
                             </Button>
                         </form>

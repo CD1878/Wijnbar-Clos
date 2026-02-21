@@ -45,26 +45,19 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
           {/* Desktop Center Nav */}
           <div className="hidden md:flex flex-1 justify-center items-center gap-8 lg:gap-12">
+            <Link to="/" className="text-sm font-bold uppercase tracking-[0.2em] hover:text-brand-contrast transition-colors">Home</Link>
             <Link to="/menu?tab=menu" className="text-sm font-bold uppercase tracking-[0.2em] hover:text-brand-contrast transition-colors">Menu</Link>
             <Link to="/menu?tab=wijn" className="text-sm font-bold uppercase tracking-[0.2em] hover:text-brand-contrast transition-colors">Wijn</Link>
             <Link to="/contact" className="text-sm font-bold uppercase tracking-[0.2em] hover:text-brand-contrast transition-colors">Contact</Link>
-            <a href="#reserve" className="text-sm font-bold uppercase tracking-[0.2em] hover:text-brand-contrast transition-colors">Reserveren</a>
+            <Link to="/reserveren" className="text-sm font-bold uppercase tracking-[0.2em] hover:text-brand-contrast transition-colors">Reserveren</Link>
           </div>
 
           {/* Desktop Right Nav (Socials in Corner) */}
-          <div className="hidden md:flex flex-1 justify-end items-center">
-            <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="text-brand-cream hover:text-brand-contrast transition-colors">
+          <div className="hidden md:flex flex-1 justify-end items-center mr-4">
+            <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="text-brand-cream hover:text-brand-contrast transition-colors p-2">
               <Instagram size={24} strokeWidth={1.5} />
             </a>
           </div>
-
-          {/* Mobile Reserve (Visible only on Mobile if needed, but usually we hide it in favor of hamburger or keep it small) */}
-          <Link
-            to="/reserveren"
-            className="px-6 py-2 border transition-all duration-300 text-xs tracking-[0.2em] uppercase font-body font-bold border-brand-cream text-brand-cream hover:bg-brand-cream hover:text-[#370028]"
-          >
-            Reserveren
-          </Link>
         </div>
       </nav>
 
@@ -82,6 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <div className="w-12 h-px bg-brand-sand mx-auto my-8"></div>
 
           <div className="flex flex-col space-y-4 font-body text-sm tracking-widest text-brand-grey/70">
+            <Link to="/" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Home</Link>
             <Link to="/menu?tab=wijn" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Wijnkaart</Link>
             <Link to="/menu?tab=menu" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Menukaart</Link>
             <Link to="/contact" onClick={toggleMenu} className="hover:text-brand-contrast transition-colors">Contact</Link>
