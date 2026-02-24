@@ -10,8 +10,8 @@ const HeroSection = () => (
   <section className="relative min-h-screen w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6 pb-24">
 
     {/* Wine Stain (Left) */}
-    <div className="absolute left-[-10%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none select-none opacity-80">
-      <img src="/Ontwerp zonder titel (24).png" alt="" className="w-full h-full object-contain drop-shadow-2xl" />
+    <div className="absolute left-[-10%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none select-none opacity-80 mix-blend-multiply">
+      <img src="/i/Ontwerp zonder titel (24).png" alt="" className="w-full h-full object-contain" />
     </div>
 
     {/* Centered Logo */}
