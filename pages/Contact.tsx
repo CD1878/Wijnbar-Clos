@@ -27,7 +27,7 @@ export const Contact: React.FC = () => {
         <div className="min-h-screen pt-24 md:pt-32 bg-[#370028] relative transform-gpu">
             <div className="max-w-7xl mx-auto px-6 pb-24">
 
-                <h1 className="font-sans text-5xl md:text-6xl tracking-widest text-brand-cream font-bold mb-16 text-center uppercase drop-shadow-sm">Contact</h1>
+                <h1 className="font-sans text-5xl md:text-6xl tracking-widest text-brand-cream font-bold mb-16 text-center drop-shadow-sm">Contact</h1>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 lg:mb-24">
 

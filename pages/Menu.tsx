@@ -48,14 +48,14 @@ export const Menu: React.FC = () => {
                 <div className="max-w-4xl mx-auto flex justify-center">
                     <button
                         onClick={() => setActiveTab("wijn")}
-                        className={`px-6 py-4 md:px-8 md:py-6 font-sans text-base md:text-lg tracking-widest uppercase transition-all relative ${activeTab === "wijn" ? "text-brand-cream" : "text-brand-cream/40 hover:text-brand-cream"}`}
+                        className={`px-6 py-4 md:px-8 md:py-6 font-sans text-base md:text-lg tracking-widest transition-all relative ${activeTab === "wijn" ? "text-brand-cream" : "text-brand-cream/40 hover:text-brand-cream"}`}
                     >
                         Wijnkaart
                         {activeTab === "wijn" && <span className="absolute bottom-0 left-0 w-full h-1 bg-brand-contrast" />}
                     </button>
                     <button
                         onClick={() => setActiveTab("menu")}
-                        className={`px-6 py-4 md:px-8 md:py-6 font-sans text-base md:text-lg tracking-widest uppercase transition-all relative ${activeTab === "menu" ? "text-brand-cream" : "text-brand-cream/40 hover:text-brand-cream"}`}
+                        className={`px-6 py-4 md:px-8 md:py-6 font-sans text-base md:text-lg tracking-widest transition-all relative ${activeTab === "menu" ? "text-brand-cream" : "text-brand-cream/40 hover:text-brand-cream"}`}
                     >
                         Menukaart
                         {activeTab === "menu" && <span className="absolute bottom-0 left-0 w-full h-1 bg-brand-contrast" />}
@@ -65,73 +65,63 @@ export const Menu: React.FC = () => {
 
             <div className="max-w-7xl mx-auto px-6 py-16">
                 {activeTab === "wijn" ? (
-                    <div className="animate-fade-in w-full text-brand-cream flex flex-col items-center">
-                        {/* Wijnkaart Pagination Viewer */}
-                        <div className="w-full max-w-4xl bg-[#370028] flex flex-col items-center">
+                    <div className="animate-fade-in w-full text-brand-cream flex flex-col items-center gap-16 py-8">
 
-                            <div
-                                className="w-full mb-8 flex flex-col items-center overflow-hidden drop-shadow-sm min-h-[500px]"
-                                ref={menuContainerRef}
+                        {/* Wijnkaart Section */}
+                        <div className="w-full max-w-3xl text-center flex flex-col items-center">
+                            <h2 className="font-sans text-3xl md:text-4xl tracking-widest text-brand-contrast mb-6">Wijnkaart</h2>
+                            <p className="font-serif text-lg leading-relaxed text-brand-cream/90 max-w-2xl mb-10">
+                                Ontdek onze uitgebreide selectie of bijzondere cuvées. Van frisse klassiekers tot complexe en verrassende vondsten, onze wijnkaart biedt voor ieder wat wils.
+                            </p>
+                            <a
+                                href="/wijnkaart-clos.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block border border-brand-cream px-10 py-4 text-brand-cream hover:bg-brand-cream hover:text-[#370028] transition-colors font-sans tracking-[0.2em] text-sm font-bold shadow-lg"
                             >
-                                {/* Menukaart Current Image */}
-                                <img
-                                    key={`wijnkaart-${currentWinePage}`}
-                                    src={`/wijnkaart-pages/wijnkaart-${currentWinePage}.png`}
-                                    alt={`Wijnkaart Clos Pagina ${currentWinePage}`}
-                                    className="w-full max-w-3xl h-auto object-contain bg-white"
-                                />
+                                Bekijk Wijnkaart
+                            </a>
+                        </div>
 
-                                {/* Pagination Controls */}
-                                <div className="mt-8 flex items-center justify-between w-full max-w-3xl px-4 py-4 border-t border-brand-contrast/20">
-                                    <button
-                                        onClick={handlePrevPage}
-                                        disabled={currentWinePage === 1}
-                                        className={`font-sans tracking-[0.2em] uppercase text-xs md:text-sm font-bold flex items-center gap-2 transition-colors ${currentWinePage === 1 ? 'text-brand-cream/30 cursor-not-allowed' : 'text-brand-contrast hover:text-brand-cream'}`}
-                                    >
-                                        &larr; Vorige
-                                    </button>
+                        {/* Divider */}
+                        <div className="w-24 h-px bg-brand-contrast/30"></div>
 
-                                    <span className="font-serif italic text-brand-cream/70 text-sm md:text-base">
-                                        Pagina {currentWinePage} van {totalWinePages}
-                                    </span>
+                        {/* High Wine Section */}
+                        <div className="w-full max-w-3xl text-center flex flex-col items-center">
+                            <h2 className="font-sans text-3xl md:text-4xl tracking-widest text-brand-contrast mb-6">High Wine</h2>
 
-                                    <button
-                                        onClick={handleNextPage}
-                                        disabled={currentWinePage === totalWinePages}
-                                        className={`font-sans tracking-[0.2em] uppercase text-xs md:text-sm font-bold flex items-center gap-2 transition-colors ${currentWinePage === totalWinePages ? 'text-brand-cream/30 cursor-not-allowed' : 'text-brand-contrast hover:text-brand-cream'}`}
-                                    >
-                                        Volgende &rarr;
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* High Wine Section */}
-                            <div className="max-w-3xl text-center space-y-6 mb-12">
-                                <h2 className="font-sans text-2xl md:text-3xl uppercase tracking-widest text-brand-contrast mb-4">High Wine</h2>
+                            <div className="space-y-4 max-w-2xl mb-8">
                                 <p className="font-serif text-lg leading-relaxed text-brand-cream/90">
                                     Kleine boeren. Bijzondere cuvées. Gerechten uit de open keuken. We schenken drie, vier of vijf glazen en serveren daarbij een serie kleine gerechten.
                                 </p>
                                 <p className="font-serif text-lg leading-relaxed text-brand-cream/90">
                                     De focus ligt op terroir en de juiste cuisson. We lichten toe wat er in het glas zit en waarom de combinatie op het bord klopt. De techniek is de basis, de wijn de leidraad.
                                 </p>
-
-                                <div className="py-6 border-y border-brand-contrast/20 my-8">
-                                    <h3 className="font-sans text-brand-contrast uppercase tracking-widest text-sm mb-4">Tijden</h3>
-                                    <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-12">
-                                        <p className="font-sans text-sm tracking-widest uppercase text-brand-cream/80"><span className="text-brand-contrast mr-2">Weekend:</span> 15:00 – 16:30 uur</p>
-                                        <p className="font-sans text-sm tracking-widest uppercase text-brand-cream/80"><span className="text-brand-contrast mr-2">Doordeweeks:</span> 17:00 – 18:00 uur</p>
-                                    </div>
-                                </div>
-
-                                <p className="font-sans text-lg font-bold uppercase tracking-widest text-brand-cream">Schuif aan.</p>
                             </div>
 
-                            {/* Reserveren Link / Bar */}
-                            <div className="w-full bg-[#744365] py-8 px-6 text-center mt-8">
-                                <a href="#reserve" className="inline-block border border-brand-cream px-10 py-3 text-brand-cream hover:bg-brand-cream hover:text-[#744365] transition-colors font-sans uppercase tracking-[0.2em] text-sm font-bold">
-                                    Reserveren
+                            <div className="py-6 border-y border-brand-contrast/20 w-full max-w-xl mb-10">
+                                <h3 className="font-sans text-brand-contrast tracking-widest text-sm mb-4">Tijden</h3>
+                                <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-12">
+                                    <p className="font-sans text-sm tracking-widest text-brand-cream/80"><span className="text-brand-contrast mr-2">Weekend:</span> 15:00 – 16:30 uur</p>
+                                    <p className="font-sans text-sm tracking-widest text-brand-cream/80"><span className="text-brand-contrast mr-2">Doordeweeks:</span> 17:00 – 18:00 uur</p>
+                                </div>
+                            </div>
+
+                            <p className="font-sans text-lg font-bold tracking-widest text-brand-cream mb-6">Schuif aan.</p>
+
+                            {/* Reserveren Buttons */}
+                            <div className="flex flex-col md:flex-row gap-4 justify-center w-full">
+                                <a href="https://reservations.formitable.com/clos-amsterdam/high-wine?tag=3-gangen" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#744365] px-10 py-4 text-brand-cream hover:bg-[#370028] transition-colors font-sans tracking-[0.2em] text-sm font-bold shadow-lg border border-[#744365] hover:border-[#370028]">
+                                    3 Gangen
+                                </a>
+                                <a href="https://reservations.formitable.com/clos-amsterdam/high-wine?tag=4-gangen" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#744365] px-10 py-4 text-brand-cream hover:bg-[#370028] transition-colors font-sans tracking-[0.2em] text-sm font-bold shadow-lg border border-[#744365] hover:border-[#370028]">
+                                    4 Gangen
+                                </a>
+                                <a href="https://reservations.formitable.com/clos-amsterdam/high-wine?tag=5-gangen" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#744365] px-10 py-4 text-brand-cream hover:bg-[#370028] transition-colors font-sans tracking-[0.2em] text-sm font-bold shadow-lg border border-[#744365] hover:border-[#370028]">
+                                    5 Gangen
                                 </a>
                             </div>
+
                         </div>
                     </div>
                 ) : (

@@ -8,7 +8,7 @@ export const Reserveren: React.FC = () => {
         <div className="min-h-screen pt-24 md:pt-32 bg-[#370028] relative transform-gpu">
             <div className="max-w-4xl mx-auto px-6 pb-24 text-brand-cream">
 
-                <h1 className="font-sans text-5xl md:text-6xl tracking-widest font-bold mb-16 text-center uppercase drop-shadow-sm">
+                <h1 className="font-sans text-5xl md:text-6xl tracking-widest font-bold mb-16 text-center drop-shadow-sm">
                     Reserveren
                 </h1>
 
