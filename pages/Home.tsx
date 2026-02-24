@@ -11,7 +11,7 @@ const HeroSection = () => (
 
     {/* Wine Stain (Top Left) */}
     <div className="absolute left-[-25%] top-[-10%] md:left-[-10%] md:top-[-15%] w-[600px] h-[600px] md:w-[800px] md:h-[800px] pointer-events-none select-none opacity-90">
-      <img src="/i/Ontwerp zonder titel (24).png" alt="" className="w-full h-full object-contain" />
+      <img src="/wine-stain-new.png" alt="" className="w-full h-full object-contain drop-shadow-lg" />
     </div>
 
     {/* Centered Logo */}
