@@ -7,10 +7,10 @@ export const Jobs: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-12 px-6 fade-in max-w-3xl mx-auto bg-brand-cream">
                         {/* Subtle Wine Stain Background */}
-            <div className="fixed right-[-10%] top-[-5%] w-[500px] h-[500px] md:w-[700px] md:h-[700px] pointer-events-none select-none opacity-[0.06] scale-x-[-1] rotate-12 z-0">
+            <div className="fixed right-[-10%] top-[-5%] w-[500px] h-[500px] md:w-[700px] md:h-[700px] pointer-events-none select-none opacity-15 scale-x-[-1] rotate-12 z-0">
                 <WineStain />
             </div>
-            <div className="fixed left-[-15%] bottom-[10%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-[0.04] -rotate-45 z-0">
+            <div className="fixed left-[-15%] bottom-[10%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-10 -rotate-45 z-0">
                 <WineStain />
             </div>
 
