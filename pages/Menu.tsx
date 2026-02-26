@@ -1,3 +1,4 @@
+import { WineStain } from "../components/WineStain";
 import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 
@@ -43,6 +44,11 @@ export const Menu: React.FC = () => {
 
  return (
  <div className="min-h-screen pt-16 md:pt-24 bg-[#370028] fade-in transform-gpu">
+            {/* Subtle Wine Stain Background */}
+            <div className="absolute right-[-20%] top-[20%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-5 scale-x-[-1]">
+                <WineStain />
+            </div>
+
  {/* Navigation Tabs */}
  <div className="bg-[#370028] border-b border-brand-contrast/20 shadow-sm sticky top-[72px] z-40 transform-gpu">
  <div className="max-w-4xl mx-auto flex justify-center">

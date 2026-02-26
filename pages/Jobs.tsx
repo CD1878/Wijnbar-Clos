@@ -1,3 +1,4 @@
+import { WineStain } from "../components/WineStain";
 import React from 'react';
 import { Button } from '../components/Button';
 import { Input, TextArea } from '../components/FormElements';
@@ -5,6 +6,11 @@ import { Input, TextArea } from '../components/FormElements';
 export const Jobs: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-12 px-6 fade-in max-w-3xl mx-auto bg-brand-cream">
+            {/* Subtle Wine Stain Background */}
+            <div className="absolute right-[-20%] top-[20%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-5 scale-x-[-1]">
+                <WineStain />
+            </div>
+
  <header className="mb-10 md:mb-16 text-center">
  <h1 className="font-display text-3xl md:text-6xl text-brand-green-dark mb-4 md:mb-6">Werken bij Clos</h1>
  <p className="font-sans text-brand-grey max-w-xl mx-auto leading-relaxed font-light text-sm md:text-base">

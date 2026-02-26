@@ -1,3 +1,4 @@
+import { WineStain } from "../components/WineStain";
 import React from 'react';
 import { Button } from '../components/Button';
 
@@ -25,6 +26,11 @@ const GlassTextArea = ({ label, ...props }: any) => (
 export const Groups: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 px-6 fade-in bg-brand-cream/30 relative overflow-hidden">
+            {/* Subtle Wine Stain Background */}
+            <div className="absolute right-[-20%] top-[20%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-5 scale-x-[-1]">
+                <WineStain />
+            </div>
+
  {/* Background blobs for depth */}
  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-rose/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
  <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-cream rounded-full blur-3xl -z-10"></div>

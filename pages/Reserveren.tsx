@@ -1,3 +1,4 @@
+import { WineStain } from "../components/WineStain";
 import React from 'react';
 import { Button } from '../components/Button';
 import { Phone, Users } from 'lucide-react';
@@ -6,6 +7,11 @@ import { Link } from 'react-router-dom';
 export const Reserveren: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 bg-[#370028] relative transform-gpu">
+            {/* Subtle Wine Stain Background */}
+            <div className="absolute right-[-20%] top-[20%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-5 scale-x-[-1]">
+                <WineStain />
+            </div>
+
  <div className="max-w-4xl mx-auto px-6 pb-24 text-brand-cream">
 
  <h1 className="font-sans text-5xl md:text-6xl tracking-widest font-bold mb-16 text-center drop-shadow-sm">
