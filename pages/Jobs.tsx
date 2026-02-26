@@ -6,8 +6,11 @@ import { Input, TextArea } from '../components/FormElements';
 export const Jobs: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-12 px-6 fade-in max-w-3xl mx-auto bg-brand-cream">
-                                    {/* Prominent Wine Stain Background */}
-            <div className="fixed left-[-120px] md:left-[-15%] top-1/2 -translate-y-[55%] md:-translate-y-1/2 w-[450px] h-[450px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-90 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
+                                                {/* Premium Abstract Wine Stain Texture (Top Right) */}
+            <div className="fixed -right-[30%] md:-right-[15%] -top-[10%] md:-top-[20%] w-[600px] h-[600px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-10 rotate-45 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
+            
+            {/* Premium Abstract Wine Stain Texture (Bottom Left) */}
+            <div className="fixed -left-[30%] md:-left-[15%] -bottom-[10%] md:-bottom-[20%] w-[500px] h-[500px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-5 -rotate-12 scale-x-[-1] z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
             <div className="fixed left-[-15%] bottom-[10%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-10 -rotate-45 z-0">
                 <WineStain />
             </div>
