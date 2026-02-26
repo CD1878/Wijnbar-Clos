@@ -26,8 +26,11 @@ const GlassTextArea = ({ label, ...props }: any) => (
 export const Groups: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 px-6 fade-in bg-brand-cream/30 relative overflow-hidden">
-            {/* Subtle Wine Stain Background */}
-            <div className="absolute right-[-20%] top-[20%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-5 scale-x-[-1]">
+                        {/* Subtle Wine Stain Background */}
+            <div className="fixed right-[-10%] top-[-5%] w-[500px] h-[500px] md:w-[700px] md:h-[700px] pointer-events-none select-none opacity-[0.06] scale-x-[-1] rotate-12 z-0">
+                <WineStain />
+            </div>
+            <div className="fixed left-[-15%] bottom-[10%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-[0.04] -rotate-45 z-0">
                 <WineStain />
             </div>
 

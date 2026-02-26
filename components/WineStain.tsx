@@ -17,7 +17,7 @@ export const WineStain: React.FC<WineStainProps> = ({
 }) => {
     return (
         <div
-            className={`absolute pointer-events-none select-none ${className} bg-[url('/wine-stain-25.png')] bg-contain bg-center bg-no-repeat`}
+            className={`absolute w-full h-full pointer-events-none select-none ${className} bg-[url('/wine-stain-25.png')] bg-contain bg-center bg-no-repeat`}
             style={{
                 transform: `rotate(${rotation}deg) scale(${scale})`,
                 opacity: opacity

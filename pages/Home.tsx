@@ -10,7 +10,7 @@ const HeroSection = () => (
     <section className="relative min-h-screen w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6 pb-24">
 
         {/* Wine Stain (Behind Left) */}
-        <div className="absolute left-[-30%] md:left-[-15%] top-1/2 -translate-y-[60%] md:-translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-90 z-0 bg-[url('/wine-stain-25.png')] bg-contain bg-center bg-no-repeat" aria-hidden="true" />
+        <div className="absolute left-[-120px] md:left-[-15%] top-1/2 -translate-y-[55%] md:-translate-y-1/2 w-[450px] h-[450px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-90 z-0 bg-[url('/wine-stain-25.png')] bg-contain bg-center bg-no-repeat" aria-hidden="true" />
 
         {/* Centered Logo */}
         <div className="z-20 flex flex-col items-center text-center mt-[-5%]">
