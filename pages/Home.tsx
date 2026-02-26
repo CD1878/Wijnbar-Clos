@@ -9,8 +9,8 @@ import { WineStain } from '../components/WineStain';
 const HeroSection = () => (
     <section className="relative min-h-screen w-full bg-[#370028] overflow-hidden flex flex-col items-center justify-center p-6 pb-24">
 
-        {/* Wine Stain (Top Left) */}
-        <div className="absolute left-[-25%] top-[-10%] md:left-[-10%] md:top-[-15%] w-[600px] h-[600px] md:w-[800px] md:h-[800px] pointer-events-none select-none opacity-90">
+        {/* Wine Stain (Behind Left) */}
+        <div className="absolute left-[-30%] md:left-[-15%] top-1/2 -translate-y-[60%] md:-translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-90 z-0">
             <img src="/wine-stain-25.png" alt="" className="w-full h-full object-contain" />
         </div>
 
