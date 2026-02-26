@@ -6,10 +6,8 @@ import { Input, TextArea } from '../components/FormElements';
 export const Jobs: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-12 px-6 fade-in max-w-3xl mx-auto bg-brand-cream">
-                        {/* Subtle Wine Stain Background */}
-            <div className="fixed right-[-10%] top-[-5%] w-[500px] h-[500px] md:w-[700px] md:h-[700px] pointer-events-none select-none opacity-15 scale-x-[-1] rotate-12 z-0">
-                <WineStain />
-            </div>
+                                    {/* Prominent Wine Stain Background */}
+            <div className="fixed left-[-120px] md:left-[-15%] top-1/2 -translate-y-[55%] md:-translate-y-1/2 w-[450px] h-[450px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-90 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
             <div className="fixed left-[-15%] bottom-[10%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-10 -rotate-45 z-0">
                 <WineStain />
             </div>
