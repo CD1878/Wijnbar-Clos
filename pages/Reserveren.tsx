@@ -9,21 +9,6 @@ export const Reserveren: React.FC = () => {
  <div className="min-h-screen pt-24 md:pt-32 bg-[#370028] relative transform-gpu">
                                                                                                 {/* Subtle Wine Stain Background */}
             <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
-            
-            {/* Premium Abstract Wine Stain Texture (Bottom Left) */}
-            <div className="fixed -left-[30%] md:-left-[15%] bottom-[0%] md:-bottom-[20%] w-[450px] h-[450px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-10 md:opacity-20 -rotate-12 scale-x-[-1] z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
-            
-            {/* Premium Abstract Wine Stain Texture (Bottom Left) */}
-            <div className="fixed -left-[30%] md:-left-[15%] bottom-[0%] md:-bottom-[20%] w-[450px] h-[450px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-10 md:opacity-[0.15] -rotate-12 scale-x-[-1] z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
-            
-            {/* Premium Abstract Wine Stain Texture (Bottom Left) */}
-            <div className="fixed -left-[30%] md:-left-[15%] bottom-[0%] md:-bottom-[20%] w-[450px] h-[450px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-10 md:opacity-5 -rotate-12 scale-x-[-1] z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
-            
-            {/* Premium Abstract Wine Stain Texture (Bottom Left) */}
-            <div className="fixed -left-[30%] md:-left-[15%] -bottom-[10%] md:-bottom-[20%] w-[500px] h-[500px] md:w-[1000px] md:h-[1000px] pointer-events-none select-none opacity-5 -rotate-12 scale-x-[-1] z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
-            <div className="fixed left-[-15%] bottom-[10%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] pointer-events-none select-none opacity-10 -rotate-45 z-0">
-                <WineStain />
-            </div>
 
  <div className="max-w-4xl mx-auto px-6 pb-24 text-brand-cream">
 
