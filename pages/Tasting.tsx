@@ -25,7 +25,7 @@ const GlassTextArea = ({ label, ...props }: any) => (
 export const Tasting: React.FC = () => {
  return (
  <div className="min-h-screen pt-32 pb-24 px-6 fade-in bg-brand-cream/30 relative overflow-hidden">
-                                                                                    {/* Premium Abstract Wine Stain Texture (Top Right) */}
+                                                                                                {/* Subtle Wine Stain Background */}
             <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
             
             {/* Premium Abstract Wine Stain Texture (Bottom Left) */}
