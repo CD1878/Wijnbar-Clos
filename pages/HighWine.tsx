@@ -53,15 +53,15 @@ export const HighWine: React.FC = () => {
 
                     {/* Reserveren Buttons */}
                     <div className="flex flex-col md:flex-row gap-4 justify-center w-full">
-                        <a href="https://reservations.formitable.com/clos-amsterdam/high-wine?tag=3-gangen" target="_blank" rel="noopener noreferrer" className="inline-block bg-brand-contrast px-8 py-3 text-[#FBF9F6] hover:opacity-80 transition-opacity font-sans tracking-[0.2em] text-xs md:text-sm font-bold shadow-sm">
+                        <Link to="/reserveren" className="inline-block bg-brand-contrast px-8 py-3 text-[#FBF9F6] hover:opacity-80 transition-opacity font-sans tracking-[0.2em] text-xs md:text-sm font-bold shadow-sm text-center">
                             3 GANGEN
-                        </a>
-                        <a href="https://reservations.formitable.com/clos-amsterdam/high-wine?tag=4-gangen" target="_blank" rel="noopener noreferrer" className="inline-block bg-brand-contrast px-8 py-3 text-[#FBF9F6] hover:opacity-80 transition-opacity font-sans tracking-[0.2em] text-xs md:text-sm font-bold shadow-sm">
+                        </Link>
+                        <Link to="/reserveren" className="inline-block bg-brand-contrast px-8 py-3 text-[#FBF9F6] hover:opacity-80 transition-opacity font-sans tracking-[0.2em] text-xs md:text-sm font-bold shadow-sm text-center">
                             4 GANGEN
-                        </a>
-                        <a href="https://reservations.formitable.com/clos-amsterdam/high-wine?tag=5-gangen" target="_blank" rel="noopener noreferrer" className="inline-block bg-brand-contrast px-8 py-3 text-[#FBF9F6] hover:opacity-80 transition-opacity font-sans tracking-[0.2em] text-xs md:text-sm font-bold shadow-sm">
+                        </Link>
+                        <Link to="/reserveren" className="inline-block bg-brand-contrast px-8 py-3 text-[#FBF9F6] hover:opacity-80 transition-opacity font-sans tracking-[0.2em] text-xs md:text-sm font-bold shadow-sm text-center">
                             5 GANGEN
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
