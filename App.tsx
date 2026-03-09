@@ -7,6 +7,7 @@ import { Groups } from './pages/Groups';
 import { Jobs } from './pages/Jobs';
 import { Tasting } from './pages/Tasting';
 import { Menu } from './pages/Menu';
+import { HighWine } from './pages/HighWine';
 import { Contact } from './pages/Contact';
 import { Reserveren } from './pages/Reserveren';
 
@@ -32,7 +33,7 @@ const AppContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-brand-grey bg-brand-cream selection:bg-brand-gold selection:text-brand-forest">
+    <div className="min-h-screen flex flex-col font-serif text-brand-grey bg-brand-cream selection:bg-brand-contrast selection:text-brand-cream">
       <ScrollToTop />
       <Navbar scrolled={scrolled} />
 
@@ -43,6 +44,7 @@ const AppContent: React.FC = () => {
           <Route path="/vacatures" element={<Jobs />} />
           <Route path="/wijnproeven" element={<Tasting />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/high-wine" element={<HighWine />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/reserveren" element={<Reserveren />} />
         </Routes>

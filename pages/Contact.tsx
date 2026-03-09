@@ -25,13 +25,13 @@ const ContactTextArea = ({ label, ...props }: any) => (
 
 export const Contact: React.FC = () => {
  return (
- <div className="min-h-screen pt-24 md:pt-32 bg-[#370028] relative transform-gpu">
+ <div className="min-h-screen pt-24 md:pt-32 bg-brand-cream relative transform-gpu">
                                                                                                 {/* Subtle Wine Stain Background */}
-            <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
+            <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-[#370028]" style={{ WebkitMaskImage: "url('/wine-stain-25.png')", maskImage: "url('/wine-stain-25.png')", WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskPosition: "center", maskPosition: "center", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} aria-hidden="true" />
 
  <div className="max-w-7xl mx-auto px-6 pb-24">
 
- <h1 className="font-sans text-5xl md:text-6xl tracking-widest text-brand-cream font-bold mb-16 text-center drop-shadow-sm">Contact</h1>
+ <h1 className="font-sans text-5xl md:text-6xl tracking-widest text-[#370028] font-bold mb-16 text-center drop-shadow-sm">Contact</h1>
 
  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-16 lg:mb-24">
 
@@ -39,8 +39,8 @@ export const Contact: React.FC = () => {
  <div className="space-y-12">
  {/* Address */}
  <div>
- <h3 className="font-sans text-brand-contrast font-bold text-lg tracking-widest mb-4">Adres</h3>
- <div className="font-serif text-brand-cream text-lg leading-relaxed">
+ <h3 className="font-sans text-[#370028] font-bold text-lg tracking-widest mb-4">Adres</h3>
+ <div className="font-serif text-[#370028] text-lg leading-relaxed">
  <p>Beukenplein 50</p>
  <p>Amsterdam-Oost</p>
  </div>
@@ -48,8 +48,8 @@ export const Contact: React.FC = () => {
 
  {/* Reservations */}
  <div>
- <h3 className="font-sans text-brand-contrast font-bold text-lg tracking-widest mb-4">Reserveren</h3>
- <div className="font-serif text-brand-cream text-lg leading-relaxed space-y-4">
+ <h3 className="font-sans text-[#370028] font-bold text-lg tracking-widest mb-4">Reserveren</h3>
+ <div className="font-serif text-[#370028] text-lg leading-relaxed space-y-4">
  <p>Tafels tot 8 personen reserveer je direct via de widget.</p>
  <p>Ben je met een grotere groep? Vul dan ons formulier in over de samenstelling van het menu en de selectie cuvées. Zo staat de eerste fles koud en de keuken klaar zodra jullie binnenstappen.</p>
  </div>
@@ -57,43 +57,43 @@ export const Contact: React.FC = () => {
 
  {/* Direct Contact */}
  <div>
- <h3 className="font-sans text-brand-contrast font-bold text-lg tracking-widest mb-4">Direct Contact</h3>
- <p className="font-serif text-brand-cream text-lg leading-relaxed mb-4">Voor vragen over vandaag of last-minute wijzigingen:</p>
- <div className="space-y-4 font-serif text-brand-cream text-lg">
+ <h3 className="font-sans text-[#370028] font-bold text-lg tracking-widest mb-4">Direct Contact</h3>
+ <p className="font-serif text-[#370028] text-lg leading-relaxed mb-4">Voor vragen over vandaag of last-minute wijzigingen:</p>
+ <div className="space-y-4 font-serif text-[#370028] text-lg">
  <div className="flex items-center gap-4">
- <Phone className="text-brand-contrast shrink-0" />
- <a href="tel:0207733043" className="hover:text-brand-contrast transition-colors">020-7733043</a>
+ <Phone className="text-[#370028] shrink-0" />
+ <a href="tel:0207733043" className="hover:text-[#370028] transition-colors">020-7733043</a>
  </div>
  <div className="flex items-center gap-4">
- <Mail className="text-brand-contrast shrink-0" />
- <a href="mailto:Social@closamsterdam.nl" className="hover:text-brand-contrast transition-colors">Social@closamsterdam.nl</a>
+ <Mail className="text-[#370028] shrink-0" />
+ <a href="mailto:Social@closamsterdam.nl" className="hover:text-[#370028] transition-colors">Social@closamsterdam.nl</a>
  </div>
  </div>
  </div>
 
  {/* Hours */}
  <div>
- <h3 className="font-sans text-brand-contrast font-bold text-lg tracking-widest mb-6">Openingstijden</h3>
- <div className="space-y-3 font-serif text-brand-cream text-lg">
+ <h3 className="font-sans text-[#370028] font-bold text-lg tracking-widest mb-6">Openingstijden</h3>
+ <div className="space-y-3 font-serif text-[#370028] text-lg">
  <div className="flex justify-between max-w-md border-b border-brand-contrast/20 pb-2">
  <span>Maandag</span>
- <span className="text-brand-contrast font-sans tracking-widest text-sm font-bold mt-1">Gesloten</span>
+ <span className="text-[#370028] font-sans tracking-widest text-sm font-bold mt-1">Gesloten</span>
  </div>
  <div className="flex justify-between max-w-md border-b border-brand-contrast/20 pb-2">
  <span>Dinsdag t/m Donderdag</span>
- <span className="text-brand-cream font-sans tracking-widest text-sm mt-1">17:00 - 00:00</span>
+ <span className="text-[#370028] font-sans tracking-widest text-sm mt-1">17:00 - 00:00</span>
  </div>
  <div className="flex justify-between max-w-md border-b border-brand-contrast/20 pb-2">
  <span>Vrijdag</span>
- <span className="text-brand-cream font-sans tracking-widest text-sm mt-1">15:00 - 01:00</span>
+ <span className="text-[#370028] font-sans tracking-widest text-sm mt-1">15:00 - 01:00</span>
  </div>
  <div className="flex justify-between max-w-md border-b border-brand-contrast/20 pb-2">
  <span>Zaterdag</span>
- <span className="text-brand-cream font-sans tracking-widest text-sm mt-1">15:00 - 01:00</span>
+ <span className="text-[#370028] font-sans tracking-widest text-sm mt-1">15:00 - 01:00</span>
  </div>
  <div className="flex justify-between max-w-md border-b border-brand-contrast/20 pb-2">
  <span>Zondag</span>
- <span className="text-brand-cream font-sans tracking-widest text-sm mt-1">15:00 - 23:00</span>
+ <span className="text-[#370028] font-sans tracking-widest text-sm mt-1">15:00 - 23:00</span>
  </div>
  </div>
  </div>
@@ -108,7 +108,7 @@ export const Contact: React.FC = () => {
  <ContactInput label="Email" id="email" type="email" placeholder="email@adres.nl" />
  <ContactInput label="Aantal Personen" id="persons" type="number" placeholder="Bv. 10" />
  <ContactTextArea label="Bijzonderheden" id="message" placeholder="Dieetwensen of andere opmerkingen?" />
- <Button type="submit" variant="primary" className="mt-6 md:mt-8 w-full justify-center bg-[#744365] text-brand-cream hover:bg-[#370028] hover:text-brand-cream tracking-[0.2em] font-sans font-bold border-none py-4 text-sm transition-colors">
+ <Button type="submit" variant="primary" className="mt-6 md:mt-8 w-full justify-center bg-brand-contrast text-[#FBF9F6] hover:opacity-80 hover:text-[#FBF9F6] tracking-[0.2em] font-sans font-bold border-none py-4 text-sm transition-colors">
  Schuif aan
  </Button>
  </form>

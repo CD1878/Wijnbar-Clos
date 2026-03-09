@@ -27,7 +27,7 @@ export const Groups: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 px-6 fade-in bg-brand-cream/30 relative overflow-hidden">
                                                                                                 {/* Subtle Wine Stain Background */}
-            <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
+            <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-[#370028]" style={{ WebkitMaskImage: "url('/wine-stain-25.png')", maskImage: "url('/wine-stain-25.png')", WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskPosition: "center", maskPosition: "center", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} aria-hidden="true" />
 
  {/* Background blobs for depth */}
  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-rose/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
@@ -65,7 +65,7 @@ export const Groups: React.FC = () => {
  <GlassTextArea label="Wensen" id="message" placeholder="Vertel ons meer..." />
 
  <div className="mt-4 md:mt-6">
- <Button variant="primary" className="w-full justify-center bg-brand-dark text-brand-cream hover:bg-brand-red border-brand-dark hover:border-brand-red">
+ <Button variant="primary" className="w-full justify-center bg-brand-dark text-[#370028] hover:bg-brand-red border-brand-dark hover:border-brand-red">
  Verstuur Aanvraag
  </Button>
  </div>

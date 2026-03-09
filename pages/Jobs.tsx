@@ -7,7 +7,7 @@ export const Jobs: React.FC = () => {
  return (
  <div className="min-h-screen pt-24 md:pt-32 pb-12 px-6 fade-in max-w-3xl mx-auto bg-brand-cream">
                                                                                                 {/* Subtle Wine Stain Background */}
-            <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/wine-stain-25.png')" }} aria-hidden="true" />
+            <div className="fixed -right-[30%] md:-right-[15%] top-[10%] md:-top-[20%] w-[450px] h-[450px] md:w-[1200px] md:h-[1200px] pointer-events-none select-none opacity-[0.15] md:opacity-30 rotate-45 z-0 bg-[#370028]" style={{ WebkitMaskImage: "url('/wine-stain-25.png')", maskImage: "url('/wine-stain-25.png')", WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskPosition: "center", maskPosition: "center", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} aria-hidden="true" />
 
  <header className="mb-10 md:mb-16 text-center">
  <h1 className="font-display text-3xl md:text-6xl text-brand-green-dark mb-4 md:mb-6">Werken bij Clos</h1>
@@ -54,7 +54,7 @@ export const Jobs: React.FC = () => {
  file:mr-4 file:py-2 file:px-4
  file:rounded-none file:border-0
  file:text-xs file:font-bold file: file:tracking-widest
- file:bg-brand-green-dark file:text-brand-cream
+ file:bg-brand-green-dark file:text-[#FBF9F6]
  hover:file:bg-brand-contrast hover:file:text-brand-green-dark
  file:transition-colors cursor-pointer
  "/>
