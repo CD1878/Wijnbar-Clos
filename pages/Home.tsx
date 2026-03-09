@@ -52,7 +52,7 @@ export const Home: React.FC = () => {
                         <img src="/images/gallery-update-4.jpg" alt="Instagram preview" className="w-full aspect-square object-cover transition-transform hover:scale-105 duration-300 shadow-sm" />
                         <img src="/images/272928076_240040804952134_5258158475876734953_n.jpg" alt="Instagram preview" className="w-full aspect-square object-cover transition-transform hover:scale-105 duration-300 shadow-sm" />
                         <img src="/images/270227255_257367406350177_1100061905620617192_n.jpg" alt="Instagram preview" className="w-full aspect-square object-cover transition-transform hover:scale-105 duration-300 shadow-sm" />
-                        <img src="/images/273850683_491420409202332_6921264627057698718_n.jpg" alt="Instagram preview" className="w-full aspect-square object-cover transition-transform hover:scale-105 duration-300 shadow-sm hidden md:block" />
+                        <img src="/images/273850683_491420409202332_6921264627057698718_n.jpg" alt="Instagram preview" className="w-full aspect-square object-cover transition-transform hover:scale-105 duration-300 shadow-sm" />
                     </div>
 
                     <a href="https://www.instagram.com/closamsterdam/" target="_blank" rel="noopener noreferrer" className="mt-10 inline-block border border-[#370028] text-[#370028] px-8 py-3 font-sans font-bold tracking-[0.2em] text-xs hover:bg-[#370028] hover:text-brand-cream transition-colors">
